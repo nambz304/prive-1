@@ -1,32 +1,23 @@
-
 import React from 'react';
-
 const LocationSection = () => {
-  const locationFeatures = [
-    {
-      icon: "🏙️",
-      title: "Trung tâm Thủ Đức",
-      description: "Vị trí đắc địa ngay trung tâm thành phố Thủ Đức, dễ dàng kết nối với các khu vực trọng điểm của TP.HCM."
-    },
-    {
-      icon: "🛣️",
-      title: "Kết nối giao thông",
-      description: "Liền kề các trục đường lớn như Xa Lộ Hà Nội, Mai Chí Thọ, Vành Đai 2, giúp cư dân di chuyển thuận tiện."
-    },
-    {
-      icon: "🏥",
-      title: "Tiện ích xung quanh",
-      description: "Gần các trung tâm thương mại, trường học quốc tế, bệnh viện hàng đầu, công viên và khu vui chơi giải trí."
-    },
-    {
-      icon: "🌉",
-      title: "Cầu nối trung tâm",
-      description: "Chỉ 15 phút đến trung tâm Quận 1, 10 phút đến Quận 2 và 20 phút đến sân bay Tân Sơn Nhất."
-    }
-  ];
-
-  return (
-    <section id="location" className="py-20 bg-gray-50">
+  const locationFeatures = [{
+    icon: "🏙️",
+    title: "Trung tâm Thủ Đức",
+    description: "Vị trí đắc địa ngay trung tâm thành phố Thủ Đức, dễ dàng kết nối với các khu vực trọng điểm của TP.HCM."
+  }, {
+    icon: "🛣️",
+    title: "Kết nối giao thông",
+    description: "Liền kề các trục đường lớn như Xa Lộ Hà Nội, Mai Chí Thọ, Vành Đai 2, giúp cư dân di chuyển thuận tiện."
+  }, {
+    icon: "🏥",
+    title: "Tiện ích xung quanh",
+    description: "Gần các trung tâm thương mại, trường học quốc tế, bệnh viện hàng đầu, công viên và khu vui chơi giải trí."
+  }, {
+    icon: "🌉",
+    title: "Cầu nối trung tâm",
+    description: "Chỉ 15 phút đến trung tâm Quận 1, 10 phút đến Quận 2 và 20 phút đến sân bay Tân Sơn Nhất."
+  }];
+  return <section id="location" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="section-title">
           <h2>Vị Trí Đắc Địa</h2>
@@ -39,26 +30,20 @@ const LocationSection = () => {
           <div className="animate-on-scroll">
             <h3 className="text-xl font-bold text-prive mb-6">Lợi thế vị trí</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {locationFeatures.map((feature, index) => (
-                <div key={index} className="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              {locationFeatures.map((feature, index) => <div key={index} className="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div className="text-3xl mb-3">{feature.icon}</div>
                   <h4 className="font-semibold text-lg mb-2">{feature.title}</h4>
                   <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
           <div className="animate-on-scroll">
             <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/lovable-uploads/9a274b96-1cc0-45bc-813e-ad4620d51bc2.jpg"
-                alt="Vị trí dự án Privé" 
-                className="w-full h-full object-cover"
-              />
+              <img alt="Vị trí dự án Privé" src="/lovable-uploads/2bcf6504-c315-418a-99c4-15564ed0ecb2.jpg" className="w-full h-full object-contain" />
               <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-70 text-white p-4">
-                <h4 className="font-semibold mb-1">55 Vũ Tông Phan</h4>
-                <p className="text-sm">Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                
+                
               </div>
             </div>
           </div>
@@ -86,8 +71,6 @@ const LocationSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LocationSection;
