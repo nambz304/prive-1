@@ -22,7 +22,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-prive mt-0.5 mr-2" />
-                <span className="text-gray-300">Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh</span>
+                <span className="text-gray-300">55 Vũ Tông Phan, Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-prive mr-2" />
@@ -39,7 +39,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Bản Đồ</h4>
             <div className="rounded-lg overflow-hidden h-48">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15676.459490879176!2d106.72151083955079!3d10.800720400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175298ff81d5561%3A0xe6276c08bc55925!2zUHJpdsOpIFRodQ!5e0!3m2!1sen!2s!4v1715098730852!5m2!1sen!2s" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0053666508086!2d106.740145!3d10.808556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317526fc0edd2453%3A0x8a4db9817c716287!2zNTUgVsWpIFTDtG5nIFBoYW4sIEFuIFBow7osIFF14bqtbiAyLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1715302782077!5m2!1sen!2s" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }}

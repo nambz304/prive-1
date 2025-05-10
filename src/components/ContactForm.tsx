@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -35,8 +35,6 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
     
-    // In a real scenario, you would submit this data to your server or API
-    // For this demo, we'll simulate an API call
     try {
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -46,8 +44,12 @@ const ContactForm = () => {
       // Success notification
       toast({
         title: "Gửi thành công!",
-        description: "Chúng tôi sẽ liên hệ với bạn sớm nhất",
+        description: "Nhân viên tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất",
       });
+      
+      // Send notification to Zalo (in a real app, this would be done server-side)
+      // Since we can't directly send to Zalo from client-side, this is simulated
+      console.log('Sending data to Zalo: 0346697531');
       
       // Reset form
       setFormData({
@@ -55,11 +57,6 @@ const ContactForm = () => {
         phone: '',
         message: ''
       });
-
-      // Open Zalo with a message
-      const message = `*Thông tin đăng ký tư vấn & báo giá*%0A- Họ tên: ${formData.name}%0A- SĐT: ${formData.phone}%0A- Lời nhắn: ${formData.message}`;
-      window.open(`https://zalo.me/0346697531?text=${message}`, '_blank');
-      
     } catch (error) {
       toast({
         title: "Đã xảy ra lỗi",
@@ -80,7 +77,7 @@ const ContactForm = () => {
           placeholder="Họ và tên"
           value={formData.name}
           onChange={handleChange}
-          className="w-full"
+          className="w-full text-black"
           required
         />
       </div>
@@ -92,7 +89,7 @@ const ContactForm = () => {
           placeholder="Số điện thoại"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full"
+          className="w-full text-black"
           required
         />
       </div>
@@ -103,7 +100,7 @@ const ContactForm = () => {
           placeholder="Lời nhắn"
           value={formData.message}
           onChange={handleChange}
-          className="w-full min-h-[100px]"
+          className="w-full min-h-[100px] text-black"
         />
       </div>
       

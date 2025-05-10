@@ -1,3 +1,4 @@
+
 import React from 'react';
 const OverviewSection = () => {
   const projectDetails = [{
@@ -5,7 +6,7 @@ const OverviewSection = () => {
     value: 'Căn hộ cao cấp Privé'
   }, {
     label: 'Vị trí',
-    value: 'Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh'
+    value: '55 Vũ Tông Phan, Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh'
   }, {
     label: 'Chủ đầu tư',
     value: 'Tập đoàn Đất Xanh'

@@ -51,17 +51,15 @@ const LocationSection = () => {
 
           <div className="animate-on-scroll">
             <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15676.459490879176!2d106.72151083955079!3d10.800720400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175298ff81d5561%3A0xe6276c08bc55925!2zUHJpdsOpIFRodQ!5e0!3m2!1sen!2s!4v1715098730852!5m2!1sen!2s" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }}
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map Location"
-                className="absolute inset-0"
-              ></iframe>
+              <img 
+                src="/lovable-uploads/9a274b96-1cc0-45bc-813e-ad4620d51bc2.jpg"
+                alt="Vị trí dự án Privé" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-70 text-white p-4">
+                <h4 className="font-semibold mb-1">55 Vũ Tông Phan</h4>
+                <p className="text-sm">Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+              </div>
             </div>
           </div>
         </div>
