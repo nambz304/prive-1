@@ -8,8 +8,9 @@ import OverviewSection from '@/components/sections/OverviewSection';
 import LocationSection from '@/components/sections/LocationSection';
 import AmenitiesSection from '@/components/sections/AmenitiesSection';
 import FloorPlansSection from '@/components/sections/FloorPlansSection';
-import ProgressSection from '@/components/sections/ProgressSection';
+import SampleRoomSection from '@/components/sections/SampleRoomSection';
 import PricingSection from '@/components/sections/PricingSection';
+import PolicySection from '@/components/sections/PolicySection';
 import ContactSection from '@/components/sections/ContactSection';
 
 // Helper function to handle animation on scroll
@@ -38,13 +39,21 @@ const Index = () => {
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Dự án căn hộ cao cấp Privé tại Thủ Đức - Không gian sống đẳng cấp với tiện ích hiện đại từ Tập đoàn Đất Xanh. Liên hệ ngay để nhận tư vấn và báo giá chi tiết.');
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', 'Dự án căn hộ cao cấp Privé tại Thủ Đức - Không gian sống đẳng cấp với tiện ích hiện đại từ Tập đoàn Đất Xanh. Liên hệ ngay để nhận tư vấn và báo giá chi tiết.');
+      document.head.appendChild(metaDescription);
     }
     
     // Set meta keywords
-    const metaKeywords = document.createElement('meta');
-    metaKeywords.setAttribute('name', 'keywords');
-    metaKeywords.setAttribute('content', 'Privé, căn hộ cao cấp, bất động sản, Thủ Đức, Đất Xanh, chung cư, nhà ở, đầu tư');
-    document.head.appendChild(metaKeywords);
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      metaKeywords.setAttribute('content', 'Privé, căn hộ cao cấp, bất động sản, Thủ Đức, Đất Xanh, chung cư, nhà ở, đầu tư');
+      document.head.appendChild(metaKeywords);
+    }
 
     // Initialize scroll animation
     handleScrollAnimation();
@@ -67,8 +76,9 @@ const Index = () => {
         <LocationSection />
         <AmenitiesSection />
         <FloorPlansSection />
-        <ProgressSection />
         <PricingSection />
+        <PolicySection />
+        <SampleRoomSection />
         <ContactSection />
       </main>
       <FloatingButtons />

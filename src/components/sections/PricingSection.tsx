@@ -1,74 +1,54 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import ImageGallery from '@/components/ImageGallery';
 
 const PricingSection = () => {
   const pricingData = [
     {
-      type: "Căn hộ 1 Phòng Ngủ",
-      area: "50m² - 60m²",
-      priceRange: "2.5 - 3.2 tỷ",
-      pricePerM2: "50 - 53 triệu/m²",
-      features: [
-        "Phù hợp cho người độc thân, cặp đôi",
-        "Thiết kế hiện đại, tối ưu không gian",
-        "Ban công riêng",
-        "View thành phố hoặc sông"
-      ]
+      type: "Studio",
+      area: "45m² - 55m²",
+      priceRange: "2.2 - 2.8 tỷ",
+      pricePerM2: "48 - 51 triệu/m²",
     },
     {
-      type: "Căn hộ 2 Phòng Ngủ",
+      type: "2 PN 2 WC",
       area: "75m² - 85m²",
       priceRange: "3.8 - 4.5 tỷ",
       pricePerM2: "50 - 53 triệu/m²",
-      features: [
-        "Lý tưởng cho gia đình trẻ",
-        "2 phòng tắm",
-        "Không gian sinh hoạt chung rộng rãi",
-        "Ban công lớn, view đẹp"
-      ]
     },
     {
-      type: "Căn hộ 3 Phòng Ngủ",
+      type: "3 PN 2 WC",
       area: "100m² - 120m²",
       priceRange: "5.0 - 6.3 tỷ",
       pricePerM2: "50 - 53 triệu/m²",
-      features: [
-        "Dành cho gia đình nhiều thế hệ",
-        "Không gian sống rộng rãi",
-        "Thiết kế hiện đại, thông thoáng",
-        "View panorama"
-      ]
     },
     {
-      type: "Penthouse & Sky Villa",
-      area: "160m² - 200m²",
-      priceRange: "8.5 - 12 tỷ",
-      pricePerM2: "53 - 60 triệu/m²",
-      features: [
-        "Đẳng cấp sang trọng bậc nhất",
-        "Thiết kế độc đáo, cao cấp",
-        "Tầm nhìn không giới hạn",
-        "Tiện ích riêng biệt"
-      ]
+      type: "Duplex Villa",
+      area: "140m² - 180m²",
+      priceRange: "7.5 - 9.8 tỷ",
+      pricePerM2: "53 - 55 triệu/m²",
+    },
+    {
+      type: "Penthouse",
+      area: "180m² - 220m²",
+      priceRange: "10.5 - 13.5 tỷ",
+      pricePerM2: "55 - 60 triệu/m²",
     }
   ];
 
-  const paymentPlans = [
+  const projectImages = [
     {
-      name: "Tiêu chuẩn",
-      description: "30% đến khi nhận nhà, 70% giải ngân khi nhận nhà",
-      detail: "Đặt cọc 50 triệu, ký HĐMB 15%, 15% sau 6 tháng, 70% khi nhận nhà"
+      src: "https://images.unsplash.com/photo-1598228723793-52759bba239c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      alt: "Khu vực sảnh chờ sang trọng"
     },
     {
-      name: "Thanh toán nhanh",
-      description: "Thanh toán 95% giá trị căn hộ, chiết khấu 8%",
-      detail: "Áp dụng cho khách hàng thanh toán sớm 95% giá trị căn hộ trong vòng 15 ngày kể từ ngày ký HĐMB"
+      src: "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      alt: "Không gian sống hiện đại"
     },
     {
-      name: "Hỗ trợ ngân hàng",
-      description: "Hỗ trợ vay đến 70% giá trị căn hộ, ân hạn nợ gốc lên đến 24 tháng",
-      detail: "Ngân hàng đối tác: Vietcombank, BIDV, Techcombank với lãi suất ưu đãi 0% trong 24 tháng đầu"
+      src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      alt: "Phối cảnh tổng thể dự án Privé"
     }
   ];
 
@@ -77,94 +57,63 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
+    <section id="pricing" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
           <h2>Bảng Giá</h2>
           <p>
-            Thông tin giá bán và phương thức thanh toán linh hoạt, phù hợp với nhu cầu của khách hàng
+            Thông tin giá bán và các loại hình căn hộ của dự án Privé
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {pricingData.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-prive text-white px-6 py-4">
-                <h3 className="text-xl font-semibold">{item.type}</h3>
-                <p className="opacity-90">{item.area}</p>
-              </div>
-              
-              <div className="p-6">
-                <div className="mb-6 text-center">
-                  <span className="text-2xl font-bold text-prive">{item.priceRange}</span>
-                  <p className="text-gray-500 text-sm">{item.pricePerM2}</p>
-                </div>
-                
-                <ul className="space-y-3 mb-6">
-                  {item.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <span className="text-green-500 mr-2">✓</span>
-                      <span className="text-gray-600 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button 
-                  onClick={openZalo}
-                  className="w-full bg-prive hover:bg-prive-dark"
-                >
-                  Nhận tư vấn
-                </Button>
-              </div>
-            </div>
-          ))}
+        <div className="overflow-x-auto mb-12">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-prive">
+                <th className="border border-gray-600 p-3 text-left">Loại căn hộ</th>
+                <th className="border border-gray-600 p-3 text-left">Diện tích</th>
+                <th className="border border-gray-600 p-3 text-left">Giá bán</th>
+                <th className="border border-gray-600 p-3 text-left">Đơn giá</th>
+                <th className="border border-gray-600 p-3 text-left">Liên hệ</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pricingData.map((item, index) => (
+                <tr key={index} className={index % 2 === 0 ? "bg-gray-800" : ""}>
+                  <td className="border border-gray-600 p-3 font-medium">{item.type}</td>
+                  <td className="border border-gray-600 p-3">{item.area}</td>
+                  <td className="border border-gray-600 p-3">{item.priceRange}</td>
+                  <td className="border border-gray-600 p-3">{item.pricePerM2}</td>
+                  <td className="border border-gray-600 p-3">
+                    <Button 
+                      onClick={openZalo}
+                      variant="default"
+                      size="sm"
+                      className="bg-prive hover:bg-prive-dark w-full"
+                    >
+                      Báo giá
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        <div className="bg-white rounded-lg p-6 md:p-8 shadow-md">
-          <h3 className="text-2xl font-semibold mb-6 text-prive">Phương Thức Thanh Toán</h3>
+        <div className="mt-10 bg-gray-800 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-6 text-prive">Hình ảnh dự án</h3>
+          <ImageGallery images={projectImages} columns={3} className="mb-8" />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {paymentPlans.map((plan, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-5 hover:border-prive transition-colors">
-                <h4 className="font-semibold text-lg mb-3">{plan.name}</h4>
-                <p className="text-gray-600 mb-4">{plan.description}</p>
-                <p className="text-sm text-gray-500">{plan.detail}</p>
-              </div>
-            ))}
+          <div className="text-center">
+            <p className="mb-6 text-gray-300">Liên hệ ngay với chúng tôi để nhận báo giá chi tiết và các chính sách ưu đãi mới nhất.</p>
+            <Button 
+              size="lg" 
+              className="bg-prive hover:bg-prive-dark"
+              onClick={openZalo}
+            >
+              Nhận báo giá chi tiết
+            </Button>
           </div>
-          
-          <div className="mt-8 bg-gray-50 p-5 rounded-lg border border-gray-200">
-            <h4 className="font-semibold text-lg mb-2">Chính Sách Ưu Đãi</h4>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <span className="text-prive mr-2">•</span>
-                <span className="text-gray-700">Quà tặng nội thất trị giá lên đến 500 triệu cho khách hàng mua căn hộ từ 3 phòng ngủ</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-prive mr-2">•</span>
-                <span className="text-gray-700">Miễn phí 3 năm phí quản lý cho khách hàng thanh toán sớm 95%</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-prive mr-2">•</span>
-                <span className="text-gray-700">Chiết khấu 1%/căn cho khách hàng mua từ 2 căn trở lên</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-prive mr-2">•</span>
-                <span className="text-gray-700">Chính sách cam kết thuê lại với lợi nhuận tối thiểu 6%/năm trong 2 năm đầu</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-10 text-center">
-          <p className="mb-6 text-gray-600">Giá bán và chính sách có thể thay đổi theo từng thời điểm. Vui lòng liên hệ với chúng tôi để nhận báo giá chi tiết mới nhất.</p>
-          <Button 
-            size="lg" 
-            className="bg-prive hover:bg-prive-dark"
-            onClick={openZalo}
-          >
-            Nhận báo giá chi tiết
-          </Button>
         </div>
       </div>
     </section>

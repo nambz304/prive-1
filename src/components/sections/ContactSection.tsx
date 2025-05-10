@@ -1,169 +1,83 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { useToast } from "@/components/ui/use-toast";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const phone = formData.get('phone') as string;
-    const message = formData.get('message') as string;
-    
-    // Validate form
-    if (!name || !phone) {
-      toast({
-        title: "Lỗi",
-        description: "Vui lòng điền đầy đủ thông tin",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Validate phone number format (Vietnamese number)
-    const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
-    if (!phoneRegex.test(phone)) {
-      toast({
-        title: "Lỗi",
-        description: "Vui lòng nhập số điện thoại hợp lệ",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    console.log('Contact form submitted:', { name, phone, message });
-    
-    // Success notification
-    toast({
-      title: "Gửi thành công!",
-      description: "Chúng tôi sẽ liên hệ với bạn sớm nhất",
-    });
-    
-    // Reset form
-    e.currentTarget.reset();
-
-    // Open Zalo with a message
-    const zaloMessage = `*Thông tin liên hệ từ website*%0A- Họ tên: ${name}%0A- SĐT: ${phone}%0A- Lời nhắn: ${message}`;
-    window.open(`https://zalo.me/0346697531?text=${zaloMessage}`, '_blank');
-  };
-
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
           <h2>Liên Hệ</h2>
-          <p>
-            Để nhận thông tin chi tiết và tư vấn về dự án Privé, vui lòng liên hệ với chúng tôi
+          <p className="text-gray-300">
+            Hãy liên hệ với chúng tôi để nhận tư vấn và báo giá chi tiết về dự án Privé
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
-            <h3 className="text-xl font-semibold mb-6 text-prive">Gửi thông tin liên hệ</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Họ và tên *
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Nhập họ và tên"
-                  required
-                />
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <div className="bg-gray-800 rounded-lg p-8 shadow-lg">
+              <h3 className="text-xl font-semibold mb-6 text-prive">Thông Tin Liên Hệ</h3>
               
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Số điện thoại *
-                </label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Nhập số điện thoại"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Lời nhắn
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Nhập lời nhắn của bạn"
-                  rows={4}
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-prive hover:bg-prive-dark"
-              >
-                Gửi thông tin
-              </Button>
-            </form>
-          </div>
-          
-          <div className="space-y-6">
-            <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-prive">Thông Tin Liên Hệ</h3>
-              
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 <li className="flex items-start">
-                  <Phone className="w-5 h-5 text-prive mt-0.5 mr-3" />
+                  <MapPin className="w-6 h-6 text-prive mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Hotline</p>
-                    <a href="tel:0346697531" className="text-gray-600 hover:text-prive">034 669 7531</a>
+                    <h4 className="font-medium text-white">Địa chỉ</h4>
+                    <p className="text-gray-300">Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh</p>
                   </div>
                 </li>
+                
                 <li className="flex items-start">
-                  <Mail className="w-5 h-5 text-prive mt-0.5 mr-3" />
+                  <Phone className="w-6 h-6 text-prive mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Email</p>
-                    <a href="mailto:info@privedatxanh.vn" className="text-gray-600 hover:text-prive">info@privedatxanh.vn</a>
+                    <h4 className="font-medium text-white">Điện thoại</h4>
+                    <a href="tel:0346697531" className="text-gray-300 hover:text-prive">034 669 7531</a>
                   </div>
                 </li>
+                
                 <li className="flex items-start">
-                  <MapPin className="w-5 h-5 text-prive mt-0.5 mr-3" />
+                  <Mail className="w-6 h-6 text-prive mt-1 mr-3" />
                   <div>
-                    <p className="font-medium">Địa Chỉ</p>
-                    <p className="text-gray-600">Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh</p>
+                    <h4 className="font-medium text-white">Email</h4>
+                    <a href="mailto:info@privedatxanh.vn" className="text-gray-300 hover:text-prive">info@privedatxanh.vn</a>
                   </div>
                 </li>
               </ul>
+
+              <div className="mt-8">
+                <h4 className="font-medium text-white mb-4">Giờ làm việc:</h4>
+                <p className="text-gray-300">Thứ Hai - Chủ Nhật: 8:30 - 17:30</p>
+              </div>
+
+              <div className="mt-8">
+                <h4 className="font-medium text-white mb-4">Bản đồ:</h4>
+                <div className="rounded-lg overflow-hidden h-64">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15676.459490879176!2d106.72151083955079!3d10.800720400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175298ff81d5561%3A0xe6276c08bc55925!2zUHJpdsOpIFRodQ!5e0!3m2!1sen!2s!4v1715098730852!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }}
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Google Maps"
+                  ></iframe>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-prive">Nhà Mẫu & Văn Phòng Bán Hàng</h3>
-              <p className="text-gray-600 mb-3">
-                Quý khách có thể tham quan nhà mẫu tại địa chỉ:
-              </p>
-              <p className="font-medium">
-                Phường An Phú, TP. Thủ Đức, TP. Hồ Chí Minh
-              </p>
-              <p className="text-gray-600 mt-3">
-                Thời gian mở cửa: 8:30 - 17:30 (Thứ 2 - Chủ nhật)
-              </p>
-            </div>
-            
-            <div className="flex justify-center">
-              <Button 
-                variant="outline" 
-                className="border-prive text-prive hover:bg-prive hover:text-white"
-                onClick={() => window.open('https://zalo.me/0346697531', '_blank')}
-              >
-                Kết nối Zalo
-              </Button>
+          </div>
+          
+          <div>
+            <div className="bg-gray-800 rounded-lg p-8 shadow-lg">
+              <h3 className="text-xl font-semibold mb-6 text-prive">Gửi Yêu Cầu Tư Vấn</h3>
+              <ContactForm />
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-400">
+                  Nhân viên tư vấn của chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ sau khi nhận được thông tin.
+                </p>
+              </div>
             </div>
           </div>
         </div>

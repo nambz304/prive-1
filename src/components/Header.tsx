@@ -14,8 +14,9 @@ const Header = () => {
     { label: 'Vị Trí', href: '#location' },
     { label: 'Tiện Ích', href: '#amenities' },
     { label: 'Mặt Bằng', href: '#floor-plans' },
-    { label: 'Tiến Độ', href: '#progress' },
     { label: 'Bảng Giá', href: '#pricing' },
+    { label: 'Chính Sách', href: '#policy' },
+    { label: 'Nhà Mẫu', href: '#sample-room' },
     { label: 'Liên Hệ', href: '#contact' },
   ];
 
@@ -39,12 +40,12 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/80 backdrop-blur py-4'
+        isScrolled ? 'bg-gray-900 shadow-md py-2' : 'bg-gray-900/90 backdrop-blur py-4'
       }`}
     >
       <div className="container flex items-center justify-between px-4">
         <div className="flex items-center">
-          <a href="#hero" className="text-2xl font-bold text-prive">
+          <a href="#hero" className="text-2xl font-bold text-white">
             PRIVÉ
           </a>
         </div>
@@ -56,7 +57,7 @@ const Header = () => {
               <li key={item.label}>
                 <a 
                   href={item.href}
-                  className="font-medium hover-gold"
+                  className="font-medium text-gray-200 hover:text-prive transition-colors"
                 >
                   {item.label}
                 </a>
@@ -90,21 +91,21 @@ const Header = () => {
             variant="ghost"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
-            className="p-2"
+            className="p-2 text-white"
           >
             <div className="w-6 flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 w-full bg-foreground transition-transform duration-300 ${
+                className={`block h-0.5 w-full bg-white transition-transform duration-300 ${
                   isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
                 }`}
               ></span>
               <span
-                className={`block h-0.5 w-full bg-foreground transition-opacity duration-300 ${
+                className={`block h-0.5 w-full bg-white transition-opacity duration-300 ${
                   isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               ></span>
               <span
-                className={`block h-0.5 w-full bg-foreground transition-transform duration-300 ${
+                className={`block h-0.5 w-full bg-white transition-transform duration-300 ${
                   isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                 }`}
               ></span>
@@ -116,7 +117,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+          className={`fixed inset-0 z-40 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           } lg:hidden pt-20`}
         >
@@ -126,7 +127,7 @@ const Header = () => {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-xl font-medium block py-2 hover-gold"
+                    className="text-xl font-medium block py-2 text-white hover:text-prive"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}

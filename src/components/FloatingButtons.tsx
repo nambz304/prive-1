@@ -60,14 +60,14 @@ const FloatingButtons = () => {
 
       <button 
         onClick={handleZalo}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors shadow-lg"
+        className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
       >
         <MessageSquare size={20} />
       </button>
 
       <button 
         onClick={handleCall}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors shadow-lg"
+        className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
       >
         <Phone size={20} />
       </button>

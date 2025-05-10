@@ -1,159 +1,162 @@
 
 import React, { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 
 const FloorPlansSection = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
+  const [activeTab, setActiveTab] = useState("1pn");
+  
   const floorPlans = [
     {
-      type: "1bedroom",
-      name: "Căn hộ 1 Phòng Ngủ",
-      variants: [
-        {
-          name: "Type A - 50m²",
-          image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 50m² | 1 Phòng Ngủ | 1 Phòng Tắm | Ban công"
-        },
-        {
-          name: "Type B - 60m²",
-          image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 60m² | 1 Phòng Ngủ + 1 Phòng Đa Năng | 1 Phòng Tắm | Ban công Lớn"
-        }
+      id: "1pn",
+      title: "Căn hộ 1 Phòng ngủ",
+      area: "50m² - 60m²",
+      image: "https://images.unsplash.com/photo-1557100119-41847c28e13f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      features: [
+        "Diện tích: 50m² - 60m²",
+        "1 phòng ngủ, 1 phòng tắm",
+        "Ban công riêng",
+        "Bếp mở hiện đại",
+        "Không gian linh hoạt",
+        "Phù hợp cho cặp đôi, người độc thân"
       ]
     },
     {
-      type: "2bedroom",
-      name: "Căn hộ 2 Phòng Ngủ",
-      variants: [
-        {
-          name: "Type C - 75m²",
-          image: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 75m² | 2 Phòng Ngủ | 2 Phòng Tắm | Ban công"
-        },
-        {
-          name: "Type D - 85m²",
-          image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 85m² | 2 Phòng Ngủ | 2 Phòng Tắm | 2 Ban công"
-        }
+      id: "2pn",
+      title: "Căn hộ 2 Phòng ngủ",
+      area: "75m² - 85m²",
+      image: "https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      features: [
+        "Diện tích: 75m² - 85m²",
+        "2 phòng ngủ, 2 phòng tắm",
+        "Phòng khách rộng rãi",
+        "Ban công panorama",
+        "Bếp riêng biệt",
+        "Phù hợp cho gia đình trẻ"
       ]
     },
     {
-      type: "3bedroom",
-      name: "Căn hộ 3 Phòng Ngủ",
-      variants: [
-        {
-          name: "Type E - 100m²",
-          image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 100m² | 3 Phòng Ngủ | 2 Phòng Tắm | Ban công"
-        },
-        {
-          name: "Type F - 120m²",
-          image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 120m² | 3 Phòng Ngủ | 2 Phòng Tắm | Phòng Làm Việc | 2 Ban công"
-        }
+      id: "3pn",
+      title: "Căn hộ 3 Phòng ngủ",
+      area: "100m² - 120m²",
+      image: "https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      features: [
+        "Diện tích: 100m² - 120m²",
+        "3 phòng ngủ, 2 phòng tắm",
+        "Phòng khách liền bếp",
+        "Ban công rộng",
+        "Phòng làm việc",
+        "Phù hợp cho gia đình nhiều thế hệ"
       ]
     },
     {
-      type: "penthouse",
-      name: "Penthouse & Sky Villa",
-      variants: [
-        {
-          name: "Sky Villa - 160m²",
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 160m² | 3 Phòng Ngủ | 3 Phòng Tắm | Phòng Khách Lớn | Sân Vườn"
-        },
-        {
-          name: "Penthouse - 200m²",
-          image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80",
-          details: "Diện tích: 200m² | 4 Phòng Ngủ | 4 Phòng Tắm | Phòng Giải Trí | Sân Vườn | Hồ Bơi Riêng"
-        }
+      id: "duplex",
+      title: "Duplex Villa",
+      area: "140m² - 180m²",
+      image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      features: [
+        "Diện tích: 140m² - 180m²",
+        "3 phòng ngủ, 3 phòng tắm",
+        "Thiết kế 2 tầng",
+        "Không gian riêng tư",
+        "Khu vực giải trí",
+        "Phù hợp cho gia đình thành đạt"
+      ]
+    },
+    {
+      id: "penthouse",
+      title: "Penthouse",
+      area: "180m² - 220m²",
+      image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      features: [
+        "Diện tích: 180m² - 220m²",
+        "4 phòng ngủ, 4 phòng tắm",
+        "Thiết kế cao cấp",
+        "Ban công vườn",
+        "Tầm nhìn 360°",
+        "Đẳng cấp thượng lưu"
       ]
     }
   ];
 
-  const openLightbox = (image: string) => {
-    setSelectedImage(image);
-  };
-
-  const closeLightbox = () => {
-    setSelectedImage(null);
+  const openZalo = () => {
+    window.open('https://zalo.me/0346697531', '_blank');
   };
 
   return (
-    <section id="floor-plans" className="py-20 bg-gray-50">
+    <section id="floor-plans" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Mặt Bằng Dự Án</h2>
+          <h2>Mặt Bằng Căn Hộ</h2>
           <p>
-            Đa dạng các loại căn hộ được thiết kế tối ưu công năng, mang đến không gian sống lý tưởng
+            Đa dạng các loại hình căn hộ với thiết kế tối ưu không gian sống
           </p>
         </div>
 
-        <Tabs defaultValue="1bedroom" className="w-full">
-          <TabsList className="flex flex-wrap justify-center mb-6 bg-transparent">
+        <div className="mb-8">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="w-full flex flex-wrap justify-center mb-6 bg-gray-100">
+              {floorPlans.map((plan) => (
+                <TabsTrigger 
+                  key={plan.id} 
+                  value={plan.id}
+                  className="data-[state=active]:bg-prive data-[state=active]:text-white"
+                >
+                  {plan.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
             {floorPlans.map((plan) => (
-              <TabsTrigger 
-                key={plan.type} 
-                value={plan.type}
-                className="px-6 py-3 rounded-md data-[state=active]:bg-prive data-[state=active]:text-white"
-              >
-                {plan.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          
-          {floorPlans.map((plan) => (
-            <TabsContent key={plan.type} value={plan.type} className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {plan.variants.map((variant, idx) => (
-                  <div 
-                    key={idx} 
-                    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <div 
-                      className="h-64 overflow-hidden cursor-pointer"
-                      onClick={() => openLightbox(variant.image)}
-                    >
-                      <img 
-                        src={variant.image} 
-                        alt={variant.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-prive">{variant.name}</h3>
-                      <p className="text-gray-600">{variant.details}</p>
+              <TabsContent key={plan.id} value={plan.id}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gray-50 rounded-xl p-6 shadow-sm">
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src={plan.image}
+                      alt={`Mặt bằng ${plan.title}`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-prive mb-2">{plan.title}</h3>
+                    <p className="text-lg font-semibold mb-4">{plan.area}</p>
+                    
+                    <ul className="space-y-3 mb-6">
+                      {plan.features.map((feature, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-prive mr-2">✓</span>
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="flex flex-wrap gap-4">
+                      <Button 
+                        onClick={openZalo} 
+                        className="bg-prive hover:bg-prive-dark"
+                      >
+                        Nhận thông tin chi tiết
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        onClick={openZalo}
+                        className="border-prive text-prive hover:bg-prive hover:text-white"
+                      >
+                        Đặt lịch tư vấn
+                      </Button>
                     </div>
                   </div>
-                ))}
-              </div>
-              
-              <div className="mt-10 text-center">
-                <p className="text-gray-600">
-                  Liên hệ với chúng tôi để nhận thêm thông tin chi tiết về mặt bằng và thiết kế nội thất của từng loại căn hộ.
-                </p>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
       </div>
-
-      {/* Lightbox for floor plans */}
-      <Dialog open={!!selectedImage} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-          {selectedImage && (
-            <div className="relative flex items-center justify-center">
-              <img
-                src={selectedImage}
-                alt="Floor plan detail"
-                className="max-h-[80vh] max-w-full object-contain"
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };
