@@ -41,9 +41,8 @@ const HeroSection = () => {
             <a href="#contact">Liên hệ ngay</a>
           </Button>
           <Button 
-            variant="outline" 
             size="lg" 
-            className="border-white text-white hover:bg-white/20"
+            className="bg-prive hover:bg-prive-dark text-white"
             asChild
           >
             <a href="#overview">Tìm hiểu thêm</a>
