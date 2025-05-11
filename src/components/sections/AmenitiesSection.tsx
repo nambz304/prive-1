@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ImageGallery from '../ImageGallery';
 
@@ -52,7 +51,7 @@ const AmenitiesSection = () => {
 
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/public/Hình làm web/4_Tiện ích/Golf 3D.jpg",
       alt: "Kiến trúc Privé"
     },
     {
