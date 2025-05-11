@@ -27,7 +27,7 @@ const OverviewSection = () => {
     value: 'Studio, 2PN 2WC, 3PN 2WC, Garden Unit, Garden Duplex, Penthouse'
   }, {
     label: 'Diện tích các sản phẩm',
-    value: '1PN-3PN: 49m2 - 98m2, Garden Unit: 49m2 - 110m2, Garden Duplex: 130m2 - 200m2, Penthouse: 105m2 - 145m2'
+    value: '1PN-3PN: 50m2 - 98m2, Garden Unit: 49m2 - 110m2, Garden Duplex: 130m2 - 200m2, Penthouse: 105m2 - 145m2'
   }, {
     label: 'Tiện ích nổi bật',
     value: 'Hồ bơi 3000m2, Gym, Khu BBQ, Sky Bar, Khu vui chơi trẻ em, Cinema & Karaoke, Boxing, Golf 3D...'
@@ -74,11 +74,11 @@ const OverviewSection = () => {
             
             <div className="mt-6 prose max-w-none text-gray-700">
               <p>
-                Privé là dự án biểu tượng mới của Tập đoàn Đất Xanh tại khu vực Thành phố Thủ Đức, hứa hẹn mang đến không gian sống lý tưởng kết hợp giữa tiện nghi hiện đại và thiên nhiên xanh mát. 
+                The Privé là dự án biểu tượng mới của Tập đoàn Đất Xanh tại khu vực Thành phố Thủ Đức, hứa hẹn mang đến không gian sống lý tưởng kết hợp giữa tiện nghi hiện đại và thiên nhiên xanh mát. 
                 Với thiết kế kiến trúc hiện đại từ đối tác Ong & Ong, đơn vị thiết kế nổi tiếng đến từ Singapore, Privé không chỉ là nơi để ở mà còn là điểm nhấn kiến trúc của khu vực.
               </p>
               <p className="mt-4">
-                Mỗi căn hộ tại Privé đều được thiết kế tối ưu công năng, tận dụng ánh sáng tự nhiên và view thoáng đãng. 
+                Mỗi căn hộ tại The Privé đều được thiết kế tối ưu công năng, tận dụng ánh sáng tự nhiên và view thoáng đãng. 
                 Cư dân sẽ được tận hưởng cuộc sống tiện nghi với hệ thống Smart Home hiện đại, vật liệu hoàn thiện cao cấp, và đặc biệt là hệ thống tiện ích đẳng cấp như hồ bơi(3 hồ bơi với tổng diện tích 3000m2), công viên ven sông, phòng gym, khu vui chơi trẻ em, khu BBQ, v.v.
               </p>
             </div>

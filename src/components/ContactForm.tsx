@@ -74,7 +74,7 @@ const ContactForm = () => {
         <Input
           type="text"
           name="name"
-          placeholder="Họ và tên"
+          placeholder="Tên"
           value={formData.name}
           onChange={handleChange}
           className="w-full text-black"
@@ -97,7 +97,7 @@ const ContactForm = () => {
       <div>
         <Textarea
           name="message"
-          placeholder="Lời nhắn"
+          placeholder="ANH/CHỊ QUAN TÂM CĂN 2PN HAY 3PN ĐỂ LẠI THÔNG TIN EM GỬI BÁO GIÁ"
           value={formData.message}
           onChange={handleChange}
           className="w-full min-h-[100px] text-black"

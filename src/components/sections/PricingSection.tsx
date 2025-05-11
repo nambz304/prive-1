@@ -7,32 +7,32 @@ const PricingSection = () => {
   const pricingData = [
     {
       type: "Studio",
-      area: "45m² - 55m²",
-      priceRange: "2.2 - 2.8 tỷ",
+      area: "50m²",
+      priceRange: "450 - 500 triệu",
       pricePerM2: "48 - 51 triệu/m²",
     },
     {
-      type: "2 PN 2 WC",
-      area: "75m² - 85m²",
-      priceRange: "3.8 - 4.5 tỷ",
+      type: "2PN 2WC",
+      area: "71m² - 88m²",
+      priceRange: "650 - 850 triệu",
       pricePerM2: "50 - 53 triệu/m²",
     },
     {
-      type: "3 PN 2 WC",
-      area: "100m² - 120m²",
-      priceRange: "5.0 - 6.3 tỷ",
+      type: "3PN 2WC",
+      area: "98m²",
+      priceRange: "900 triệu - 1 tỷ",
       pricePerM2: "50 - 53 triệu/m²",
     },
     {
       type: "Duplex Villa",
-      area: "140m² - 180m²",
-      priceRange: "7.5 - 9.8 tỷ",
+      area: "130m² - 200m²",
+      priceRange: "Đang cập nhật",
       pricePerM2: "53 - 55 triệu/m²",
     },
     {
       type: "Penthouse",
-      area: "180m² - 220m²",
-      priceRange: "10.5 - 13.5 tỷ",
+      area: "105m² - 145m²",
+      priceRange: "Đang cập nhật",
       pricePerM2: "55 - 60 triệu/m²",
     }
   ];
@@ -62,7 +62,7 @@ const PricingSection = () => {
         <div className="section-title">
           <h2>Bảng Giá</h2>
           <p>
-            Thông tin giá bán và các loại hình căn hộ của dự án Privé
+            Thông tin giá bán và các loại hình căn hộ của dự án The Privé
           </p>
         </div>
 
@@ -72,8 +72,7 @@ const PricingSection = () => {
               <tr className="bg-prive">
                 <th className="border border-gray-600 p-3 text-left">Loại căn hộ</th>
                 <th className="border border-gray-600 p-3 text-left">Diện tích</th>
-                <th className="border border-gray-600 p-3 text-left">Giá bán</th>
-                <th className="border border-gray-600 p-3 text-left">Đơn giá</th>
+                <th className="border border-gray-600 p-3 text-left">Thanh toán đợt 1</th>
                 <th className="border border-gray-600 p-3 text-left">Liên hệ</th>
               </tr>
             </thead>
@@ -83,7 +82,6 @@ const PricingSection = () => {
                   <td className="border border-gray-600 p-3 font-medium">{item.type}</td>
                   <td className="border border-gray-600 p-3">{item.area}</td>
                   <td className="border border-gray-600 p-3">{item.priceRange}</td>
-                  <td className="border border-gray-600 p-3">{item.pricePerM2}</td>
                   <td className="border border-gray-600 p-3">
                     <Button 
                       onClick={openZalo}

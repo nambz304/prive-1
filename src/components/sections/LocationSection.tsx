@@ -22,7 +22,7 @@ const LocationSection = () => {
         <div className="section-title">
           <h2>Vị Trí Đắc Địa</h2>
           <p>
-            Privé sở hữu vị trí chiến lược tại Phường An Phú, TP. Thủ Đức, kết nối thuận tiện đến các khu vực trọng điểm
+            The Privé sở hữu vị trí chiến lược tại Phường An Phú, TP. Thủ Đức, kết nối thuận tiện đến các khu vực trọng điểm
           </p>
         </div>
 

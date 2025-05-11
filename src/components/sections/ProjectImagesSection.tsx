@@ -14,7 +14,7 @@ const ProjectImagesSection = ({ images, onContact }: { images: { src: string; al
       <h3 className="text-2xl font-semibold mb-6 text-prive">Hình ảnh dự án</h3>
       <ImageGallery images={[...images, ...additionalImages]} columns={3} className="mb-8" />
       <div className="text-center">
-        <p className="mb-6 text-gray-300">Liên hệ ngay với chúng tôi để nhận báo giá chi tiết và các chính sách ưu đãi mới nhất.</p>
+        <p className="mb-6 text-gray-300">Liên hệ ngay với chúng tôi để xem thêm hình ảnh tiện ích căn hộ.</p>
         <Button 
           size="lg" 
           className="bg-prive hover:bg-prive-dark"

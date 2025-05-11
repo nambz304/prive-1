@@ -68,7 +68,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center space-x-4">
           <Button variant="outline" className="border-prive text-prive hover:bg-prive hover:text-white" onClick={handleOpenZalo}>
             <MessageSquare className="mr-2 h-4 w-4" />
-            Tư Vấn
+            Tư Vấn Zalo
           </Button>
           <Button variant="default" className="bg-prive hover:bg-prive-dark" onClick={handleOpenZalo}>
             Booking

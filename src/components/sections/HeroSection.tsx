@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Upload } from 'lucide-react';
@@ -74,14 +73,14 @@ const HeroSection = () => {
             className="bg-prive hover:bg-prive-dark text-white"
             asChild
           >
-            <a href="#contact">Liên hệ ngay</a>
+            <a href="#contact">Xem Pháp Lý</a>
           </Button>
           <Button 
             size="lg" 
             className="bg-prive hover:bg-prive-dark text-white"
             asChild
           >
-            <a href="#overview">Tìm hiểu thêm</a>
+            <a href="#contact">Xem Bảng Giá</a>
           </Button>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, MessageSquare, ClipboardList, Home } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -30,6 +29,14 @@ const FloatingButtons = () => {
 
   return (
     <div className="fixed right-5 bottom-5 flex flex-col space-y-3 z-40">
+      <button 
+        onClick={handleCall}
+        className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white hover:bg-green-600 transition-transform shadow-lg animate-bounce"
+        style={{ animation: 'pulse 1.5s infinite' }}
+      >
+        <Phone size={20} />
+      </button>
+
       <Dialog>
         <DialogTrigger asChild>
           <button className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg">
@@ -63,13 +70,6 @@ const FloatingButtons = () => {
         className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
       >
         <MessageSquare size={20} />
-      </button>
-
-      <button 
-        onClick={handleCall}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
-      >
-        <Phone size={20} />
       </button>
     </div>
   );

@@ -41,15 +41,15 @@ const SampleRoomSection = () => {
         <div className="section-title">
           <h2>Nhà Mẫu</h2>
           <p>
-            Trải nghiệm không gian sống đẳng cấp tại căn hộ mẫu của dự án Privé
+            Trải nghiệm không gian sống đẳng cấp tại căn hộ mẫu của dự án The Privé
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
           <div>
-            <h3 className="text-xl font-bold text-prive mb-4">Thiết Kế Đẳng Cấp Châu Âu</h3>
+            <h3 className="text-xl font-bold text-prive mb-4">Thiết kế theo phong cách châu Âu</h3>
             <p className="text-gray-600 mb-4">
-              Căn hộ mẫu tại Privé được thiết kế theo phong cách hiện đại châu Âu, mang đến không gian sống tinh tế, sang trọng với các đường nét kiến trúc thanh lịch, vật liệu cao cấp và ánh sáng tự nhiên tràn ngập.
+              Căn hộ mẫu tại Privé được thiết kế theo phong cách hiện đại, mang đến không gian sống tinh tế, sang trọng với các đường nét kiến trúc thanh lịch, vật liệu cao cấp và ánh sáng tự nhiên tràn ngập.
             </p>
             <p className="text-gray-600 mb-4">
               Mỗi chi tiết trong căn hộ đều được chăm chút tỉ mỉ, từ hệ thống Smart Home hiện đại, hệ thống đèn led âm trần tinh tế, đến các thiết bị vệ sinh, thiết bị nhà bếp cao cấp từ các thương hiệu hàng đầu châu Âu.

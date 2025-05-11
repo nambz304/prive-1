@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold text-prive mb-4">PRIVÉ</h3>
             <p className="text-gray-300 mb-4">
-              Dự án căn hộ cao cấp Privé mang đến không gian sống lý tưởng kết hợp giữa tiện nghi hiện đại và thiên nhiên xanh mát, 
+              Dự án căn hộ cao cấp The Privé mang đến không gian sống lý tưởng kết hợp giữa tiện nghi hiện đại và thiên nhiên xanh mát, 
               tạo nên trải nghiệm sống đẳng cấp cho cư dân.
             </p>
           </div>

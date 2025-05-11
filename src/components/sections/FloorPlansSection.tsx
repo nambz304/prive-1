@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,10 +14,10 @@ const FloorPlansSection = () => {
     {
       id: "1pn",
       title: "Căn hộ Studio",
-      area: "49m²",
+      area: "50m²",
       image: "/web_image/5_matBangCacCan/1PN.jpg",
       features: [
-        "Diện tích: 49m2",
+        "Diện tích: 50m²",
         "1 phòng ngủ, 1 phòng tắm",
         "Ban công riêng",
         "Bếp mở hiện đại",
@@ -29,10 +28,10 @@ const FloorPlansSection = () => {
     {
       id: "2pn",
       title: "Căn hộ 2 Phòng ngủ",
-      area: "71m² - 85m²",
+      area: "71m² - 88m²",
       image: "/web_image/5_matBangCacCan/2PN_phongKhach_bep.jpg",
       features: [
-        "Diện tích: 71m² - 85m²",
+        "Diện tích: 71m² - 88m²",
         "2 phòng ngủ, 2 phòng tắm",
         "Phòng khách rộng rãi",
         "Ban công panorama",
@@ -43,43 +42,13 @@ const FloorPlansSection = () => {
     {
       id: "3pn",
       title: "Căn hộ 3 Phòng ngủ",
-      area: "95m²",
+      area: "98m²",
       image: "/web_image/5_matBangCacCan/3PN.jpg",
       features: [
-        "Diện tích: 95m²",
+        "Diện tích: 98m²",
         "3 phòng ngủ, 2 phòng tắm",
-        "Phòng khách liền bếp",
         "Ban công rộng",
-        "Phòng làm việc",
         "Phù hợp cho gia đình nhiều thế hệ"
-      ]
-    },
-    {
-      id: "duplex",
-      title: "Duplex Villa",
-      area: "140m² - 180m²",
-      image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-      features: [
-        "Diện tích: 140m² - 180m²",
-        "3 phòng ngủ, 3 phòng tắm",
-        "Thiết kế 2 tầng",
-        "Không gian riêng tư",
-        "Khu vực giải trí",
-        "Phù hợp cho gia đình thành đạt"
-      ]
-    },
-    {
-      id: "penthouse",
-      title: "Penthouse",
-      area: "180m² - 220m²",
-      image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-      features: [
-        "Diện tích: 180m² - 220m²",
-        "4 phòng ngủ, 4 phòng tắm",
-        "Thiết kế cao cấp",
-        "Ban công vườn",
-        "Tầm nhìn 360°",
-        "Đẳng cấp thượng lưu"
       ]
     }
   ];

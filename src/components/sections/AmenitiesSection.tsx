@@ -78,7 +78,7 @@ const AmenitiesSection = () => {
         <div className="section-title">
           <h2>Tiện Ích Đẳng Cấp</h2>
           <p>
-            Với hơn 50 tiện ích, Privé mang đến hệ thống tiện ích cao cấp, đáp ứng mọi nhu cầu của cuộc sống hiện đại
+            Với hơn 50 tiện ích, The Privé mang đến hệ thống tiện ích cao cấp, đáp ứng mọi nhu cầu của cuộc sống hiện đại
           </p>
         </div>
 
@@ -104,7 +104,7 @@ const AmenitiesSection = () => {
 
         <div className="mt-12 prose max-w-3xl mx-auto text-center">
           <p className="text-lg text-gray-600">
-            Tại Privé, mỗi chi tiết đều được chăm chút tỉ mỉ để tạo nên không gian sống hoàn hảo. 
+            Tại The Privé, mỗi chi tiết đều được chăm chút tỉ mỉ để tạo nên không gian sống hoàn hảo. 
             Từ khu vực công cộng đến các tiện ích riêng tư, tất cả đều được thiết kế để nâng cao trải nghiệm sống của cư dân. 
             Đây không chỉ là nơi để ở, mà còn là không gian để tận hưởng cuộc sống, kết nối cộng đồng và tạo nên những kỷ niệm đáng nhớ.
           </p>

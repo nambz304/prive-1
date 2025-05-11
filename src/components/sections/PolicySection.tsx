@@ -7,23 +7,48 @@ const PolicySection = () => {
     {
       title: "Chính sách ưu đãi",
       details: [
-        "Chiết khấu 8% khi thanh toán sớm 95% giá trị căn hộ",
-        "Miễn phí 3 năm phí quản lý cho khách hàng thanh toán sớm 95%",
-        "Chiết khấu 1% cho khách hàng mua từ 2 căn trở lên",
-        "Tặng gói nội thất cao cấp trị giá 500 triệu đồng cho căn hộ từ 3PN trở lên",
-        "Tặng voucher nội thất trị giá 200 triệu đồng cho căn hộ 2PN",
-        "Được quyền chọn tầng, chọn hướng căn hộ theo yêu cầu"
+        { 
+          title: "Chiết khấu 3%", 
+          description: "Áp dụng cho khách hàng booking sớm" 
+        },
+        { 
+          title: "Chiết khấu 1%-2%", 
+          description: "Áp dụng cho khách hàng mua sỉ" 
+        },
+        { 
+          title: "Chiết khấu 2%", 
+          description: "Áp dụng cho khách hàng ưu tiên", 
+          subDetails: [
+            "Khách hàng thân thiết của Tập đoàn Đất Xanh",
+            "Cổ đông nắm giữ từ 10.000 cổ phiếu DXG hoặc DXS",
+            "CBNV ngân hàng hoặc khách hàng có sổ tiết kiệm từ 1 tỷ trở lên tại các ngân hàng đối tác"
+          ]
+        }
       ]
     },
     {
       title: "Chính sách hỗ trợ tài chính",
       details: [
-        "Hỗ trợ vay ngân hàng lên đến 70% giá trị căn hộ",
-        "Ân hạn nợ gốc lên đến 24 tháng",
-        "Hỗ trợ lãi suất 0% trong 18 tháng đầu",
-        "Ngân hàng liên kết: Vietcombank, BIDV, Techcombank, MB Bank, TPBank",
-        "Hỗ trợ thủ tục pháp lý để vay vốn ngân hàng một cách nhanh chóng",
-        "Cam kết sổ hồng sở hữu lâu dài sau khi thanh toán đủ"
+        { 
+          title: "Thanh toán ban đầu ít", 
+          description: "Chỉ thanh toán từ 8.6% cho tới khi nhận nhà" 
+        },
+        { 
+          title: "Ngân hàng hỗ trợ vay", 
+          description: "Ngân hàng hỗ trợ vay hơn 70% giá trị căn hộ" 
+        },
+        { 
+          title: "Hỗ trợ lãi suất", 
+          description: "Hỗ trợ lãi suất 0% trong 24 tháng" 
+        },
+        { 
+          title: "Ân hạn nợ gốc lâu", 
+          description: "Ân hạn nợ gốc 24-60 tháng" 
+        },
+        { 
+          title: "Nhiều ngân hàng liên kết", 
+          description: "Vietcombank, BIDV, Techcombank, MB Bank, TP Bank, MBV Bank, Vietinbank, VP Bank" 
+        }
       ]
     }
   ];
@@ -38,7 +63,7 @@ const PolicySection = () => {
         <div className="section-title">
           <h2>Chính Sách</h2>
           <p>
-            Các chính sách ưu đãi và hỗ trợ tài chính hấp dẫn từ dự án Privé
+            Các chính sách ưu đãi và hỗ trợ tài chính hấp dẫn từ dự án The Privé
           </p>
         </div>
 
@@ -48,9 +73,16 @@ const PolicySection = () => {
               <h3 className="text-xl font-semibold mb-4 text-prive">{policy.title}</h3>
               <ul className="space-y-3">
                 {policy.details.map((detail, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-prive mr-2 mt-1">•</span>
-                    <span>{detail}</span>
+                  <li key={idx} className="flex flex-col items-start">
+                    <span className="text-prive font-bold">{detail.title}</span>
+                    <span className="text-gray-700">{detail.description}</span>
+                    {detail.subDetails && (
+                      <ul className="mt-2 space-y-1 pl-4 list-disc">
+                        {detail.subDetails.map((subDetail, subIdx) => (
+                          <li key={subIdx} className="text-gray-600">{subDetail}</li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
