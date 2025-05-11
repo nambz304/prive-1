@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ImageGallery from '@/components/ImageGallery';
+import ProjectImagesSection from './ProjectImagesSection';
 
 const PricingSection = () => {
   const pricingData = [
@@ -100,21 +100,6 @@ const PricingSection = () => {
           </table>
         </div>
 
-        <div className="mt-10 bg-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-6 text-prive">Hình ảnh dự án</h3>
-          <ImageGallery images={projectImages} columns={3} className="mb-8" />
-          
-          <div className="text-center">
-            <p className="mb-6 text-gray-300">Liên hệ ngay với chúng tôi để nhận báo giá chi tiết và các chính sách ưu đãi mới nhất.</p>
-            <Button 
-              size="lg" 
-              className="bg-prive hover:bg-prive-dark"
-              onClick={openZalo}
-            >
-              Nhận báo giá chi tiết
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

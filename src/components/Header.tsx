@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageSquare } from 'lucide-react';
@@ -25,6 +24,9 @@ const Header = () => {
   }, {
     label: 'Chính Sách',
     href: '#policy'
+  }, {
+    label: 'Hình Ảnh',
+    href: '#project-images'
   }, {
     label: 'Nhà Mẫu',
     href: '#sample-room'

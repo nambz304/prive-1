@@ -14,11 +14,11 @@ const FloorPlansSection = () => {
   const floorPlans = [
     {
       id: "1pn",
-      title: "Căn hộ 1 Phòng ngủ",
-      area: "50m² - 60m²",
-      image: "https://images.unsplash.com/photo-1557100119-41847c28e13f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      title: "Căn hộ Studio",
+      area: "49m²",
+      image: "/web_image/5_matBangCacCan/1PN.jpg",
       features: [
-        "Diện tích: 50m² - 60m²",
+        "Diện tích: 49m2",
         "1 phòng ngủ, 1 phòng tắm",
         "Ban công riêng",
         "Bếp mở hiện đại",
@@ -29,10 +29,10 @@ const FloorPlansSection = () => {
     {
       id: "2pn",
       title: "Căn hộ 2 Phòng ngủ",
-      area: "75m² - 85m²",
-      image: "https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      area: "71m² - 85m²",
+      image: "/web_image/5_matBangCacCan/2PN_phongKhach_bep.jpg",
       features: [
-        "Diện tích: 75m² - 85m²",
+        "Diện tích: 71m² - 85m²",
         "2 phòng ngủ, 2 phòng tắm",
         "Phòng khách rộng rãi",
         "Ban công panorama",
@@ -43,10 +43,10 @@ const FloorPlansSection = () => {
     {
       id: "3pn",
       title: "Căn hộ 3 Phòng ngủ",
-      area: "100m² - 120m²",
-      image: "https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      area: "95m²",
+      image: "/web_image/5_matBangCacCan/3PN.jpg",
       features: [
-        "Diện tích: 100m² - 120m²",
+        "Diện tích: 95m²",
         "3 phòng ngủ, 2 phòng tắm",
         "Phòng khách liền bếp",
         "Ban công rộng",
@@ -58,7 +58,7 @@ const FloorPlansSection = () => {
       id: "duplex",
       title: "Duplex Villa",
       area: "140m² - 180m²",
-      image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
       features: [
         "Diện tích: 140m² - 180m²",
         "3 phòng ngủ, 3 phòng tắm",

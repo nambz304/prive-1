@@ -6,23 +6,22 @@ const AmenitiesSection = () => {
     {
       category: "Thư Giãn & Sức Khỏe",
       items: [
-        "Hồ bơi vô cực view panorama",
+        "3 hồ bơi điện phân muối liên hoàn 3000m2",
         "Phòng tập Gym hiện đại",
-        "Khu Spa & Massage",
-        "Phòng Sauna",
-        "Vườn thiền Zen",
-        "Đường chạy bộ cảnh quan",
+        "Sân tenis, bóng rổ, pickle ball",
+        "Cinema & Karaoke, bóng bàn, bida",
+        "Công viên ven sông",
+        "Vườn hoa, đường dạo bộ",
       ]
     },
     {
       category: "Giải Trí & Cộng Đồng",
       items: [
-        "Sky Bar tầng thượng",
+        "5 phòng tiệc đa năng",
         "Khu BBQ ngoài trời",
-        "Phòng tiệc đa năng",
         "Khu vui chơi trẻ em",
         "Thư viện & phòng đọc sách",
-        "Phòng game giải trí",
+        "Phòng chơi golf 3D",
       ]
     },
     {
@@ -30,21 +29,18 @@ const AmenitiesSection = () => {
       items: [
         "Bảo vệ 24/7",
         "Hệ thống camera an ninh",
-        "Smart Home tích hợp",
         "Thẻ từ an ninh",
         "Bãi đậu xe thông minh",
-        "Dịch vụ concierge",
       ]
     },
     {
       category: "Mua Sắm & Dịch Vụ",
       items: [
-        "Trung tâm thương mại",
         "Siêu thị mini",
-        "Nhà hàng cao cấp",
-        "Cafe sang trọng",
-        "Dịch vụ giặt ủi",
-        "Dịch vụ vệ sinh",
+        "Nhà hàng",
+        "Quán Cafe view sông",
+        "Tiệm thuốc tây Pharmacity",
+        "Trạm sạc xe điện",
       ]
     }
   ];
@@ -55,23 +51,23 @@ const AmenitiesSection = () => {
       alt: "Kiến trúc Privé"
     },
     {
-      src: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/web_image/4_tien_ich/Golf_3D.jpg",
       alt: "Không gian sống"
     },
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/web_image/4_tien_ich/ho_boi_lumina.jpg",
       alt: "Cảnh quan xung quanh"
     },
     {
-      src: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/web_image/4_tien_ich/BBQ.jpg",
       alt: "Không gian thư giãn"
     },
     {
-      src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/web_image/4_tien_ich/vui_choi_tre_em.jpg",
       alt: "Nội thất hiện đại"
     },
     {
-      src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
+      src: "/web_image/4_tien_ich/tram_sac_xe_dien.jpg",
       alt: "Kiến trúc độc đáo"
     }
   ];
@@ -82,7 +78,7 @@ const AmenitiesSection = () => {
         <div className="section-title">
           <h2>Tiện Ích Đẳng Cấp</h2>
           <p>
-            Privé mang đến hệ thống tiện ích cao cấp, đáp ứng mọi nhu cầu của cuộc sống hiện đại và đẳng cấp
+            Với hơn 50 tiện ích, Privé mang đến hệ thống tiện ích cao cấp, đáp ứng mọi nhu cầu của cuộc sống hiện đại
           </p>
         </div>
 

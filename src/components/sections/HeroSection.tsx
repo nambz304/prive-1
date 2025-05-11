@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown, Upload } from 'lucide-react';
 
 const HeroSection = () => {
-  const [backgroundImage, setBackgroundImage] = useState<string>("https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80");
+  const [backgroundImage, setBackgroundImage] = useState<string>("/web_image/1_tong_quan_dat_xanh_home.jpg");
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   const scrollToOverview = () => {
@@ -62,7 +62,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="container relative z-10 px-4 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in leading-tight">
-          PRIVÉ <span className="block text-prive-light">Cuộc Sống Đẳng Cấp</span>
+          THE PRIVÉ <span className="block text-prive-light">Cuộc Sống Đẳng Cấp</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200 leading-relaxed">
           Trải nghiệm không gian sống cao cấp với thiết kế hiện đại 

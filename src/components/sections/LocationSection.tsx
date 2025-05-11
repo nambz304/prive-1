@@ -2,20 +2,20 @@ import React from 'react';
 const LocationSection = () => {
   const locationFeatures = [{
     icon: "🏙️",
-    title: "Trung tâm Thủ Đức",
-    description: "Vị trí đắc địa ngay trung tâm thành phố Thủ Đức, dễ dàng kết nối với các khu vực trọng điểm của TP.HCM."
+    title: "Siêu kết nối",
+    description: "Dự án nằm ngay trục cao tốc TPHCM - Long Thành - Dầu Giây, tuyến đường sắt cao tốc Bắc Nam, tuyến metro Cát Lái - Bến Thành - Tham Lương giúp kết nối nội thành lẫn ngoại thành TPHCM nhanh chóng"
   }, {
     icon: "🛣️",
-    title: "Kết nối giao thông",
-    description: "Liền kề các trục đường lớn như Xa Lộ Hà Nội, Mai Chí Thọ, Vành Đai 2, giúp cư dân di chuyển thuận tiện."
+    title: "Liền kề các khu đô thị quốc tế",
+    description: "Nằm đối diện Saigon Sports City và Global City - hai khu đô thị quốc tế lớn nhất tại TPHCM. Khu vực này được định vị là New Downtown - trung tâm mới của Sài Gòn"
   }, {
     icon: "🏥",
-    title: "Tiện ích xung quanh",
-    description: "Gần các trung tâm thương mại, trường học quốc tế, bệnh viện hàng đầu, công viên và khu vui chơi giải trí."
+    title: "Đón đầu các quy hoạch lớn",
+    description: "Dự án đón đầu các quy hoạch lớn như: Khu liên hợp thể dục thể thao quốc gia Rạch Chiếc, cao tốc TPHCM - Long Thành - Dầu Dây mở rộng từ 4 làn -> 8 làn, nút giao An Phú, siêu nhà Gas Thủ Thiêm"
   }, {
     icon: "🌉",
-    title: "Cầu nối trung tâm",
-    description: "Chỉ 15 phút đến trung tâm Quận 1, 10 phút đến Quận 2 và 20 phút đến sân bay Tân Sơn Nhất."
+    title: "3 mặt hướng thuỷ",
+    description: "Được bao quanh bởi sông Giồng Ông Tố, một nhánh của sông Sài Gòn, dự án có 3 mặt hướng thuỷ, không khí trong lành như một ốc đảo biệt lập giữa lòng TPHCM"
   }];
   return <section id="location" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -49,27 +49,7 @@ const LocationSection = () => {
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-bold text-prive mb-4">Kết nối giao thông thuận tiện</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h4 className="font-semibold">Sân bay Tân Sơn Nhất</h4>
-              <p className="text-gray-600">20 phút di chuyển</p>
-            </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h4 className="font-semibold">Trung tâm Quận 1</h4>
-              <p className="text-gray-600">15 phút di chuyển</p>
-            </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h4 className="font-semibold">Khu đô thị Thủ Thiêm</h4>
-              <p className="text-gray-600">10 phút di chuyển</p>
-            </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h4 className="font-semibold">Metro Số 1</h4>
-              <p className="text-gray-600">5 phút di chuyển</p>
-            </div>
-          </div>
-        </div>
+        {/* Removed 'Kết nối giao thông thuận tiện' section */}
       </div>
     </section>;
 };

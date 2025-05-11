@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import ProjectImagesSectionComponent from './ProjectImagesSection';
 
 const PolicySection = () => {
   const policies = [
@@ -70,6 +70,18 @@ const PolicySection = () => {
             Nhận tư vấn về chính sách
           </Button>
         </div>
+
+        {/* Add spacing before ProjectImagesSection */}
+        <div className="mt-12"></div>
+
+        <ProjectImagesSectionComponent 
+          images={[
+            { src: "/web_image/7_HinhAnhDuAn/shopHouse.jpg", alt: "Khu vực sảnh chờ sang trọng" },
+            { src: "/web_image/7_HinhAnhDuAn/sanPickleBall.jpg", alt: "Không gian sống hiện đại" },
+            { src: "/web_image/7_HinhAnhDuAn/sanTheThapDaNang.jpg", alt: "Phối cảnh tổng thể dự án Privé" }
+          ]}
+          onContact={() => window.open('https://zalo.me/0346697531', '_blank')}
+        />
       </div>
     </section>
   );
