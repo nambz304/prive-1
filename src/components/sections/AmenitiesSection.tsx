@@ -51,7 +51,7 @@ const AmenitiesSection = () => {
 
   const images = [
     {
-      src: "/public/Hình làm web/4_Tiện ích/Golf 3D.jpg",
+      src: "public/web_image/4_tien_ich/gym.jpg",
       alt: "Kiến trúc Privé"
     },
     {
