@@ -51,7 +51,7 @@ const AmenitiesSection = () => {
 
   const images = [
     {
-      src: "public/web_image/4_tien_ich/gym.jpg",
+      src: "/web_image/4_tien_ich/gym.jpg",
       alt: "Kiến trúc Privé"
     },
     {
