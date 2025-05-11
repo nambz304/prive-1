@@ -10,7 +10,7 @@ const ContactSection = () => {
         <div className="section-title">
           <h2>Liên Hệ</h2>
           <p className="text-gray-300">
-            Hãy liên hệ với chúng tôi để nhận tư vấn và báo giá chi tiết về dự án Privé
+            Hãy liên hệ với chúng tôi để nhận tư vấn và báo giá chi tiết về dự án The Privé
           </p>
         </div>
 

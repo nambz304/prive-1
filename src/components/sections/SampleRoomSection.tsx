@@ -76,14 +76,6 @@ const SampleRoomSection = () => {
               alt="Căn hộ mẫu Privé"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-              <Button 
-                onClick={openZalo} 
-                className="bg-prive hover:bg-prive-dark"
-              >
-                Đăng ký tham quan nhà mẫu
-              </Button>
-            </div>
           </div>
         </div>
         

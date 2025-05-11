@@ -125,6 +125,16 @@ const FloorPlansSection = () => {
             ))}
           </Tabs>
         </div>
+        <div className="text-center mt-10">
+          <a
+            href="https://zalo.me/0346697531"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
+          >
+            Xem hình thiết kế và mặt bằng tầng
+          </a>
+        </div>
       </div>
     </section>
   );

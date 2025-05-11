@@ -49,7 +49,16 @@ const LocationSection = () => {
           </div>
         </div>
 
-        {/* Removed 'Kết nối giao thông thuận tiện' section */}
+        <div className="text-center mt-10">
+          <a
+            href="https://zalo.me/0346697531"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
+          >
+            Xem định vị chính xác
+          </a>
+        </div>
       </div>
     </section>;
 };
