@@ -52,11 +52,9 @@ const OverviewSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-gray-100">
           <div className="lg:col-span-2">
-            <div className="relative rounded-lg overflow-hidden shadow-lg h-full w-full lg:h-auto lg:w-auto">
-              <img alt="Privé Building" className="w-full h-full object-cover" src="/lovable-uploads/9a274b96-1cc0-45bc-813e-ad4620d51bc2.jpg" />
-            </div>
+              <img alt="Privé Building" className="w-full lg:w-[78%] h-full object-cover mx-auto" src="/lovable-uploads/9a274b96-1cc0-45bc-813e-ad4620d51bc2.jpg" />
           </div>
           
           <div className="lg:col-span-3">

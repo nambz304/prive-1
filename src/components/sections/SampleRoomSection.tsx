@@ -60,6 +60,14 @@ const SampleRoomSection = () => {
             <p className="text-gray-600 mb-4">
               Mỗi căn hộ tại Privé đều là một tác phẩm nghệ thuật hoàn hảo, nơi bạn có thể tự hào gọi là "tổ ấm" của mình.
             </p>
+            <div className="hidden lg:flex justify-center mt-4">
+              <Button 
+                onClick={openZalo} 
+                className="bg-prive hover:bg-prive-dark text-white w-full lg:w-auto"
+              >
+                Đăng ký tham quan nhà mẫu
+              </Button>
+            </div>
           </div>
           
           <div className="relative rounded-lg overflow-hidden shadow-lg">
@@ -69,7 +77,7 @@ const SampleRoomSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="mt-4 lg:mt-8 flex justify-center items-center">
+          <div className="lg:hidden mt-4 flex justify-center">
             <Button 
               onClick={openZalo} 
               className="bg-prive hover:bg-prive-dark text-white w-full lg:w-auto"

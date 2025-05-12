@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
@@ -10,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-2xl font-bold text-prive mb-4">PRIVÉ</h3>
+            <h3 className="text-2xl font-bold text-prive mb-4">THE PRIVÉ</h3>
             <p className="text-gray-300 mb-4">
               Dự án căn hộ cao cấp The Privé mang đến không gian sống lý tưởng kết hợp giữa tiện nghi hiện đại và thiên nhiên xanh mát, 
               tạo nên trải nghiệm sống đẳng cấp cho cư dân.
@@ -27,10 +26,6 @@ const Footer = () => {
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-prive mr-2" />
                 <a href="tel:0346697531" className="text-gray-300 hover:text-prive">034 669 7531</a>
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-5 h-5 text-prive mr-2" />
-                <a href="mailto:info@privedatxanh.vn" className="text-gray-300 hover:text-prive">info@privedatxanh.vn</a>
               </li>
             </ul>
           </div>
