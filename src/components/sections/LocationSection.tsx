@@ -28,7 +28,7 @@ const LocationSection = () => {
             <img
               src="/web_image/viTri_2.jpg"
               alt="Vị trí dự án Privé"
-              className="w-full h-auto rounded-lg shadow-md"
+              className="w-full lg:w-4/5 h-auto rounded-lg shadow-md mx-auto"
             />
           </div>
         </div>
