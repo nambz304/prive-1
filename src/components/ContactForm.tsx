@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { Button } from '@/components/ui/button';
@@ -36,21 +35,25 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      console.log('Form submitted:', formData);
-      
+      // Gửi dữ liệu form đến backend
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       // Success notification
       toast({
         title: "Gửi thành công!",
-        description: "Nhân viên tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất",
+        description: "Thông tin của bạn đã được ghi nhận.",
       });
-      
-      // Send notification to Zalo (in a real app, this would be done server-side)
-      // Since we can't directly send to Zalo from client-side, this is simulated
-      console.log('Sending data to Zalo: 0346697531');
-      
+
       // Reset form
       setFormData({
         name: '',
