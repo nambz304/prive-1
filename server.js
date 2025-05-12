@@ -25,7 +25,7 @@ const SPREADSHEET_ID = '1e4tUiaBDKUmoFjS5oUvqSJHa7deGDKIPuX9arccAcno';
 const SHEET_NAME = 'Sheet1';
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'credentials.json', // Path to your service account key file
+  keyFile: 'credentials.json', // Path to your service account key file 
   scopes: SCOPES,
 });
 
