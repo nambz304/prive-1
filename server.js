@@ -9,10 +9,9 @@ const PORT = 5000;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://localhost:8080', // Allow requests from this origin
+  origin: 'http://localhost:8080', // Chỉ định nguồn gốc được phép
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
-  credentials: true, // Allow cookies and credentials
 }));
 
 // Start server
