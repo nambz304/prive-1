@@ -24,6 +24,13 @@ const LocationSection = () => {
           <p>
             The Privé sở hữu vị trí chiến lược tại Phường An Phú, TP. Thủ Đức, kết nối thuận tiện đến các khu vực trọng điểm
           </p>
+          <div className="mt-6">
+            <img
+              src="/web_image/viTri_2.jpg"
+              alt="Vị trí dự án Privé"
+              className="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">

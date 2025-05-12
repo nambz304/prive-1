@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageSquare } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,8 +43,15 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prevState) => !prevState);
+    document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : 'auto'; // Toggle scrolling based on menu state
   };
+
+  const handleMenuItemClick = () => {
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = 'auto'; // Re-enable scrolling after clicking a menu item
+  };
+
   const handleOpenZalo = () => {
     window.open('https://zalo.me/0346697531', '_blank');
   };
@@ -88,11 +96,11 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobile && <div className={`fixed inset-0 z-40 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden pt-20`}>
+      <div className={`fixed inset-0 z-40 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden pt-20`}>
           <nav className="container px-4">
             <ul className="space-y-6 text-center">
               {navigationItems.map(item => <li key={item.label}>
-                  <a href={item.href} className="text-xl font-medium block py-2 text-white hover:text-prive" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href={item.href} className="text-xl font-medium block py-2 text-white hover:text-prive" onClick={handleMenuItemClick}>
                     {item.label}
                   </a>
                 </li>)}
@@ -107,7 +115,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        </div>}
+        </div>
     </header>;
 };
 export default Header;

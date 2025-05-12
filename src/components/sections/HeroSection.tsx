@@ -1,29 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Upload } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   const [backgroundImage, setBackgroundImage] = useState<string>("/web_image/1_tong_quan_dat_xanh_home.jpg");
-  const fileInputRef = useRef<HTMLInputElement>(null);
   
   const scrollToOverview = () => {
     const overviewSection = document.getElementById('overview');
     if (overviewSection) {
       overviewSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      const imageUrl = URL.createObjectURL(file);
-      setBackgroundImage(imageUrl);
-    }
-  };
-  
-  const triggerFileInput = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
     }
   };
 
@@ -37,27 +22,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50"></div>
-        
-        {/* Image upload button (visible only for admin/development) */}
-        <div className="absolute top-4 right-4 z-10">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="bg-black/50 text-white border-white hover:bg-black/70"
-            onClick={triggerFileInput}
-          >
-            <Upload size={16} className="mr-2" /> Thay đổi ảnh
-          </Button>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="hidden"
-          />
-        </div>
       </div>
-      
       {/* Hero Content */}
       <div className="container relative z-10 px-4 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in leading-tight">
@@ -80,11 +45,10 @@ const HeroSection = () => {
             className="bg-prive hover:bg-prive-dark text-white"
             asChild
           >
-            <a href="#contact">Xem Bảng Giá</a>
+            <a href="#pricing">Xem Bảng Giá</a>
           </Button>
         </div>
       </div>
-      
       {/* Scroll Down Button */}
       <button 
         onClick={scrollToOverview}

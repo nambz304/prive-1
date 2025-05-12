@@ -15,12 +15,9 @@ import ViewingForm from './ViewingForm';
 const FloatingButtons = () => {
   const isMobile = useIsMobile();
 
+  // Updated the handleCall function to ensure it works on tablets
   const handleCall = () => {
-    if (isMobile) {
-      window.location.href = 'tel:0346697531';
-    } else {
-      alert('Số điện thoại: 0346697531');
-    }
+    window.location.href = 'tel:0346697531';
   };
 
   const handleZalo = () => {

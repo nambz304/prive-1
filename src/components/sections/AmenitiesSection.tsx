@@ -102,6 +102,14 @@ const AmenitiesSection = () => {
           ))}
         </div>
 
+        <div className="mt-12">
+          <img
+            src="/web_image/mbt_1_tienIch.jpg"
+            alt="Tiện ích dự án Privé"
+            className="w-full lg:w-4/5 h-auto rounded-lg shadow-md mx-auto"
+          />
+        </div>
+
         <div className="mt-12 prose max-w-3xl mx-auto text-center">
           <p className="text-lg text-gray-600">
             Tại The Privé, mỗi chi tiết đều được chăm chút tỉ mỉ để tạo nên không gian sống hoàn hảo. 
