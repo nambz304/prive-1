@@ -82,7 +82,7 @@ const ContactForm = () => {
     form.submit();
     toast({
       title: "Gửi thành công!",
-      description: "Thông tin của bạn đã được ghi nhận.",
+      description: "Nhân viên tư vấn bên em sẽ liên hệ với Anh/Chị trong vòng chậm nhất 30 phút",
     });
 
     setFormData({
