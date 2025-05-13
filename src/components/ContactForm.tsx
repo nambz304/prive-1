@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSepCgfsQQq9Ej-E_atTqWe68qY2le1yOAH4eynFTqKTPfw_jQ/formResponse"; // Replace with your Google Form URL
+const GOOGLE_FORM_ENTRIES = {
+  name: "entry.1096969560", // Replace with the entry ID for the name field
+  phone: "entry.557467604", // Replace with the entry ID for the phone field
+  message: "entry.252073521" // Replace with the entry ID for the message field
+};
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,9 +25,9 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate phone number format (Vietnamese number)
     const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
     if (!phoneRegex.test(formData.phone)) {
@@ -33,42 +40,58 @@ const ContactForm = () => {
     }
 
     setIsSubmitting(true);
-    
-    try {
-      // Gửi dữ liệu form đến backend
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
+    // Submit the form using a hidden iframe
+    const form = document.createElement('form');
+    form.action = GOOGLE_FORM_URL;
+    form.method = 'POST';
+    form.target = 'hidden_iframe';
+    form.style.display = 'none';
 
-      // Success notification
-      toast({
-        title: "Gửi thành công!",
-        description: "Thông tin của bạn đã được ghi nhận.",
-      });
+    // Append form fields
+    const nameField = document.createElement('input');
+    nameField.name = GOOGLE_FORM_ENTRIES.name;
+    nameField.value = formData.name;
+    form.appendChild(nameField);
 
-      // Reset form
-      setFormData({
-        name: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: "Đã xảy ra lỗi",
-        description: "Vui lòng thử lại sau",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    const phoneField = document.createElement('input');
+    phoneField.name = GOOGLE_FORM_ENTRIES.phone;
+    phoneField.value = formData.phone;
+    form.appendChild(phoneField);
+
+    const messageField = document.createElement('input');
+    messageField.name = GOOGLE_FORM_ENTRIES.message;
+    messageField.value = formData.message;
+    form.appendChild(messageField);
+
+    document.body.appendChild(form);
+
+    // Create a hidden iframe
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    console.log("Submitting form with data:", {
+      [GOOGLE_FORM_ENTRIES.name]: formData.name,
+      [GOOGLE_FORM_ENTRIES.phone]: formData.phone,
+      [GOOGLE_FORM_ENTRIES.message]: formData.message
+    });
+
+    // Submit the form
+    form.submit();
+    toast({
+      title: "Gửi thành công!",
+      description: "Thông tin của bạn đã được ghi nhận.",
+    });
+
+    setFormData({
+      name: "",
+      phone: "",
+      message: ""
+});
+
+    setIsSubmitting(false);
   };
 
   return (
