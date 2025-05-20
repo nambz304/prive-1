@@ -17,7 +17,7 @@ const ProjectImagesSection = ({ images, onContact, t }: { images: { src: string;
         <p className="mb-6 text-gray-300">{t.projectImagesDesc}</p>
         <Button 
           size="lg" 
-          className="bg-prive hover:bg-prive-dark"
+          className="bg-prive hover:bg-prive-dark animate-zoom-bounce"
           onClick={onContact}
         >
           {t.getQuote}

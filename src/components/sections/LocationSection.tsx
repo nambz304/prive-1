@@ -63,7 +63,7 @@ const LocationSection: React.FC<SectionProps> = ({ t }) => {
             href="https://zalo.me/0346697531"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
+            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors animate-zoom-bounce"
           >
             {t.viewExactPosition}
           </a>

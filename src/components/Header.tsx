@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
 
         {/* CTA Buttons + Language Switcher */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Button variant="outline" className="border-prive text-prive hover:bg-prive hover:text-white" onClick={handleOpenZalo}>
+          <Button variant="outline" className="border-prive text-prive hover:bg-prive hover:text-white  animate-zoom-bounce" onClick={handleOpenZalo}>
             <MessageSquare className="mr-2 h-4 w-4" />
             {t.consult}
           </Button>
@@ -118,7 +118,8 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
           </Select>
         </div>
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden -ml-2">
+        <div className="lg:hidden -ml-2 flex flex-col items-center">
+          <span className="text-xs text-white mb-1">Menu</span>
           <Button variant="ghost" onClick={toggleMobileMenu} aria-label="Toggle menu" className="p-2 text-white">
             <div className="w-6 flex flex-col gap-1.5">
               <span className={`block h-0.5 w-full bg-white transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>

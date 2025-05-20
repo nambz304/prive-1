@@ -25,27 +25,27 @@ const HeroSection: React.FC<SectionProps> = ({ t }) => {
           alt="Privé Luxury Apartments"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
       {/* Hero Content */}
       <div className="container relative z-10 px-4 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in leading-tight">
           {t.heroTitle} <span className="block text-prive-light">{t.heroSubtitle}</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200 leading-relaxed">
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200 leading-relaxed sm:block hidden">
           {t.heroDescription}
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-300">
           <Button 
             size="lg" 
-            className="bg-prive hover:bg-prive-dark text-white"
+            className="bg-prive hover:bg-prive-dark text-white sm:inline-flex hidden"
             asChild
           >
             <a href="#contact">{t.xemPhapLy}</a>
           </Button>
           <Button 
             size="lg" 
-            className="bg-prive hover:bg-prive-dark text-white"
+            className="bg-prive hover:bg-prive-dark text-white sm:inline-flex hidden"
             asChild
           >
             <a href="#pricing">{t.xemBangGia}</a>

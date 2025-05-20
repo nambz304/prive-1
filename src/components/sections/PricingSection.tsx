@@ -89,7 +89,7 @@ const PricingSection: React.FC<SectionProps> = ({ t }) => {
                       onClick={openZalo}
                       variant="default"
                       size="sm"
-                      className="bg-prive hover:bg-prive-dark w-full"
+                      className="bg-prive hover:bg-prive-dark w-full animate-zoom-bounce"
                     >
                       {t.getQuote}
                     </Button>
@@ -105,7 +105,7 @@ const PricingSection: React.FC<SectionProps> = ({ t }) => {
             href="https://zalo.me/0346697531"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
+            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors animate-zoom-bounce"
           >
             {t.downloadPriceList}
           </a>

@@ -69,7 +69,7 @@ const PolicySection: React.FC<SectionProps> = ({ t }) => {
           <p className="mb-6 text-gray-600">
             {t.policyContactDesc}
           </p>
-          <Button onClick={openZalo} className="bg-prive hover:bg-prive-dark" size="lg">{t.policyConsultBtn}</Button>
+          <Button onClick={openZalo} className="bg-prive hover:bg-prive-dark animate-zoom-bounce" size="lg">{t.policyConsultBtn}</Button>
         </div>
 
         {/* Add spacing before ProjectImagesSection */}
