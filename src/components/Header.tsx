@@ -66,13 +66,13 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-md py-2' : 'bg-gray-900/90 backdrop-blur py-4'}`}>
       <div className="container flex items-center justify-between px-4">
-        <div className="flex items-center">
+        <div className="flex items-center mr-8">
           <a href="#hero" className="text-2xl font-bold text-white">THE PRIVÉ</a>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block flex-1">
-          <ul className="flex space-x-8">
+        <nav className="hidden lg:block flex-1 ml-8">
+          <ul className="flex space-x-7">
             {navigationItems.map(item => <li key={item.label}>
                 <a href={item.href} className="font-medium text-gray-200 hover:text-prive transition-colors">
                   {item.label}
@@ -83,12 +83,13 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
 
         {/* CTA Buttons + Language Switcher */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Button variant="outline" className="border-prive text-prive hover:bg-prive hover:text-white  animate-zoom-bounce" onClick={handleOpenZalo}>
+          <Button 
+            variant="default" 
+            className="bg-prive hover:bg-prive-dark animate-zoom-bounce" 
+            onClick={handleOpenZalo}
+          >
             <MessageSquare className="mr-2 h-4 w-4" />
             {t.consult}
-          </Button>
-          <Button variant="default" className="bg-prive hover:bg-prive-dark" onClick={handleOpenZalo}>
-            {t.booking}
           </Button>
           <div className="ml-4 flex items-center">
             <Select value={lang} onValueChange={setLang}>
@@ -171,13 +172,6 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
                 onClick={handleOpenZalo}
               >
                 <MessageSquare className="mr-2 h-4 w-4" /> {t.consult}
-              </Button>
-              <Button
-                variant="default"
-                className="w-full bg-prive hover:bg-prive-dark"
-                onClick={handleOpenZalo}
-              >
-                {t.booking}
               </Button>
             </li>
           </ul>

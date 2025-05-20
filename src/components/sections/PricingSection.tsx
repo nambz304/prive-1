@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import ImageGallery from '@/components/ImageGallery';
-import ProjectImagesSection from './ProjectImagesSection';
 
 interface SectionProps {
   t: typeof import('@/lib/translations').default['vi'];
@@ -38,21 +36,6 @@ const PricingSection: React.FC<SectionProps> = ({ t }) => {
       area: "105m² - 145m²",
       priceRange: t.priceRangePenthouse,
       areaM2: t.areaM2Penthouse,
-    }
-  ];
-
-  const projectImages = [
-    {
-      src: "https://images.unsplash.com/photo-1598228723793-52759bba239c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-      alt: "Khu vực sảnh chờ sang trọng"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-      alt: "Không gian sống hiện đại"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-      alt: "Phối cảnh tổng thể dự án Privé"
     }
   ];
 
@@ -100,19 +83,7 @@ const PricingSection: React.FC<SectionProps> = ({ t }) => {
           </table>
         </div>
 
-        <div className="text-center mt-10">
-          <a
-            href="https://zalo.me/0346697531"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors animate-zoom-bounce"
-          >
-            {t.downloadPriceList}
-          </a>
-        </div>
-
-        <ProjectImagesSection images={projectImages.map(img => ({...img, alt: t[img.alt] || img.alt}))} onContact={openZalo} t={t} />
-
+        {/* Removed the project images and detailed pricing button */}
       </div>
     </section>
   );

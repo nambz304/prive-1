@@ -1,11 +1,7 @@
 import React from 'react';
 import ImageGallery from '../ImageGallery';
 
-interface SectionProps {
-  t: typeof import('@/lib/translations').default['vi'];
-}
-
-const AmenitiesSection: React.FC<SectionProps> = ({ t }) => {
+const AmenitiesSection = ({ t }) => {
   const amenities = [
     {
       category: t.relaxHealth,
@@ -110,12 +106,6 @@ const AmenitiesSection: React.FC<SectionProps> = ({ t }) => {
             alt="Tiện ích dự án Privé"
             className="w-full lg:w-4/5 h-auto rounded-lg shadow-md mx-auto"
           />
-        </div>
-
-        <div className="mt-12 prose max-w-3xl mx-auto text-center">
-          <p className="text-lg text-gray-600">
-            {t.detailedDescription}
-          </p>
         </div>
       </div>
     </section>

@@ -29,8 +29,8 @@ const HeroSection: React.FC<SectionProps> = ({ t }) => {
       </div>
       {/* Hero Content */}
       <div className="container relative z-10 px-4 text-center text-white">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in leading-tight">
-          {t.heroTitle} <span className="block text-prive-light">{t.heroSubtitle}</span>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 -mt-2 animate-fade-in leading-tight">
+          <span className="block text-white">{t.heroSubtitle}</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in delay-200 leading-relaxed sm:block hidden">
           {t.heroDescription}
@@ -41,7 +41,7 @@ const HeroSection: React.FC<SectionProps> = ({ t }) => {
             className="bg-prive hover:bg-prive-dark text-white sm:inline-flex hidden"
             asChild
           >
-            <a href="#contact">{t.xemPhapLy}</a>
+            <a href="https://zalo.me/0346697531" target="_blank" rel="noopener noreferrer">{t.xemPhapLy}</a>
           </Button>
           <Button 
             size="lg" 

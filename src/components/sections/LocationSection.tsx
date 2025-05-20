@@ -50,9 +50,7 @@ const LocationSection: React.FC<SectionProps> = ({ t }) => {
           <div className="animate-on-scroll">
             <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
               <img alt="Vị trí dự án Privé" src="/lovable-uploads/2bcf6504-c315-418a-99c4-15564ed0ecb2.jpg" className="w-full h-full object-contain" />
-              <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-70 text-white p-4">
-                
-                
+              <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-70 text-white p-4">
               </div>
             </div>
           </div>

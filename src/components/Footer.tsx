@@ -35,7 +35,7 @@ const Footer: React.FC<SectionProps> = ({ t }) => {
             <h4 className="text-lg font-semibold mb-4 text-white">{t.map}</h4>
             <div className="rounded-lg overflow-hidden h-48">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.626964964049!2d106.7467993153346!3d10.832610492282073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175271e2b1e2b2b%3A0x6e7b6e6b6e6b6e6b!2zNTUgVsO1IFTDtG5nIFBoYW4sIFBoxrDhu51uZyBBbiBQaMO6LCBUaOG7pyBUaOG7pywgSOG7kyBDaMOtbmggTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1683888888888!5m2!1svi!2s" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.897348760091!2d106.746879315334!3d10.800720192303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527c9b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2s55%20V%C5%A9%20T%C3%B4ng%20Phan%2C%20An%20Ph%C3%BA%2C%20Qu%E1%BA%ADn%202%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1sen!2s!4v1680000000000!5m2!1sen!2s" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }}
