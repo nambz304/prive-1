@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -35,5 +34,26 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Chatwoot widget -->
+    <script type="text/javascript">
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          if (window.chatwootSDK) {
+            window.chatwootSDK.run({
+              websiteToken: 'iFcN18XNWZypKTqpTcMEGJf4',
+              baseUrl: BASE_URL
+            });
+          }
+        }
+      })(document,"script");
+    </script>
+    <!-- End Chatwoot widget -->
   </body>
 </html>
