@@ -1,55 +1,30 @@
 import React from 'react';
-const OverviewSection = () => {
-  const projectDetails = [{
-    label: 'Tên dự án',
-    value: 'The Privé'
-  }, {
-    label: 'Vị trí',
-    value: 'KDC Nam Rạch Chiếc, Phường An Phú, Thành phố Thủ Đức, TP. Hồ Chí Minh'
-  }, {
-    label: 'Chủ đầu tư',
-    value: 'Đất Xanh Group'
-  }, {
-    label: 'Tư vấn thiết kế',
-    value: 'Ong & Ong – Singapore'
-  }, {
-    label: 'Đơn vị xây dựng',
-    value: 'Tập đoàn Hoà Bình'
-  }, {
-    label: 'Diện tích',
-    value: '6,7ha'
-  }, {
-    label: 'Quy mô',
-    value: '12 block, 33-35 tầng, 3175 sản phẩm'
-  }, {
-    label: 'Các loại hình',
-    value: 'Studio, 2PN 2WC, 3PN 2WC, Garden Unit, Garden Duplex, Penthouse'
-  }, {
-    label: 'Diện tích các sản phẩm',
-    value: '1PN-3PN: 50m2 - 98m2, Garden Unit: 49m2 - 110m2, Garden Duplex: 130m2 - 200m2, Penthouse: 105m2 - 145m2'
-  }, {
-    label: 'Tiện ích nổi bật',
-    value: 'Hồ bơi 3000m2, Gym, Khu BBQ, Sky Bar, Khu vui chơi trẻ em, Cinema & Karaoke, Boxing, Golf 3D...'
-  }, {
-    label: 'Pháp lý',
-    value: 'Sổ hồng lâu dài'
-  }, {
-    label: 'Vật liệu bàn giao',
-    value: 'Bàn giao cao cấp với thiết bị vệ sinh âm tường, tủ giày, tủ bếp trên-dưới, bếp từ, máy hút mùi...'
-  }, {
-    label: 'Thời gian bàn giao',
-    value: 'Quý 3/2027'
-  }, {
-    label: 'Ngân hàng liên kết',
-    value: '8 ngân hàng: Vietcombank, BIDV, Techcombank, MB Bank, TP Bank, MBV Bank, Vietinbank, VP Bank'
-  }];
+interface SectionProps {
+  t: typeof import('@/lib/translations').default['vi'];
+}
+
+const OverviewSection: React.FC<SectionProps> = ({ t }) => {
+  const projectDetails = [
+    { key: 'projectName', value: 'The Privé' },
+    { key: 'location', value: t.locationDetail },
+    { key: 'investor', value: t.investorDetail },
+    { key: 'designConsultant', value: t.designConsultantDetail },
+    { key: 'constructionUnit', value: t.constructionUnitDetail },
+    { key: 'area', value: t.areaDetail },
+    { key: 'scale', value: t.scaleDetail },
+    { key: 'productTypes', value: t.productTypesDetail },
+    { key: 'productArea', value: t.productAreaDetail },
+    { key: 'highlightedUtilities', value: t.highlightedUtilitiesDetail },
+    { key: 'legal', value: t.legalDetail },
+    { key: 'handoverMaterials', value: t.handoverMaterialsDetail },
+    { key: 'handoverTime', value: t.handoverTimeDetail },
+    { key: 'partnerBanks', value: t.partnerBanksDetail },
+  ];
   return <section id="overview" className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Tổng Quan Dự Án</h2>
-          <p className="mx-0">
-            The Privé là dự án căn hộ cao cấp mang phong cách vừa hiện đại, vừa hòa hợp với thiên nhiên và được trang bị các tiện ích tuyệt vời
-          </p>
+          <h2>{t.projectOverview}</h2>
+          <p>{t.detailedInformation}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-gray-100">
@@ -59,11 +34,11 @@ const OverviewSection = () => {
           
           <div className="lg:col-span-3">
             <div className="bg-gray-900 text-white rounded-lg p-6 shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-prive">Thông Tin Chi Tiết</h3>
+              <h3 className="text-xl font-semibold mb-4 text-prive">{t.detailedInformation}</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
                 {projectDetails.map((detail, index) => <div key={index} className="border-b border-gray-700 pb-3">
-                    <span className="text-sm text-gray-400">{detail.label}</span>
+                    <span className="text-sm text-gray-400">{t[detail.key]}</span>
                     <p className="font-medium text-white">{detail.value}</p>
                   </div>)}
               </div>

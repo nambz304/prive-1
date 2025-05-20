@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-const ViewingForm = () => {
+const ViewingForm = ({ t }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -24,8 +23,8 @@ const ViewingForm = () => {
     const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
     if (!phoneRegex.test(formData.phone)) {
       toast({
-        title: "Lỗi",
-        description: "Vui lòng nhập số điện thoại hợp lệ",
+        title: t.errorTitle,
+        description: t.errorPhone,
         variant: "destructive"
       });
       return;
@@ -42,8 +41,8 @@ const ViewingForm = () => {
       
       // Success notification
       toast({
-        title: "Đăng ký thành công!",
-        description: "Nhân viên sẽ liên hệ và hỗ trợ bạn xem nhà mẫu",
+        title: t.successTitle,
+        description: t.viewingSuccess,
       });
       
       // Reset form
@@ -53,13 +52,13 @@ const ViewingForm = () => {
       });
 
       // Open Zalo with a message
-      const message = `*Thông tin đăng ký xem nhà mẫu*%0A- Họ tên: ${formData.name}%0A- SĐT: ${formData.phone}`;
+      const message = `*${t.viewingTitle}*%0A- ${t.namePlaceholder}: ${formData.name}%0A- ${t.phonePlaceholder}: ${formData.phone}`;
       window.open(`https://zalo.me/0346697531?text=${message}`, '_blank');
       
     } catch (error) {
       toast({
-        title: "Đã xảy ra lỗi",
-        description: "Vui lòng thử lại sau",
+        title: t.errorTitle,
+        description: t.tryAgain,
         variant: "destructive"
       });
     } finally {
@@ -73,7 +72,7 @@ const ViewingForm = () => {
         <Input
           type="text"
           name="name"
-          placeholder="Họ và tên"
+          placeholder={t.namePlaceholder}
           value={formData.name}
           onChange={handleChange}
           className="w-full"
@@ -85,7 +84,7 @@ const ViewingForm = () => {
         <Input
           type="tel"
           name="phone"
-          placeholder="Số điện thoại"
+          placeholder={t.phonePlaceholder}
           value={formData.phone}
           onChange={handleChange}
           className="w-full"
@@ -94,7 +93,7 @@ const ViewingForm = () => {
       </div>
       
       <div className="pt-2 text-center text-sm text-muted-foreground">
-        <p>Nhân viên bên em sẽ liên hệ và hỗ trợ mình xem nhà mẫu</p>
+        <p>{t.viewingSuccess}</p>
       </div>
       
       <Button 
@@ -102,7 +101,7 @@ const ViewingForm = () => {
         className="w-full bg-prive hover:bg-prive-dark"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Đang gửi...' : 'Đăng ký xem nhà mẫu'}
+        {isSubmitting ? t.sending : t.viewingTitle}
       </Button>
     </form>
   );

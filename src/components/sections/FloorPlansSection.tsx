@@ -7,48 +7,48 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 
-const FloorPlansSection = () => {
+const FloorPlansSection = ({ t }) => {
   const [activeTab, setActiveTab] = useState("1pn");
   
   const floorPlans = [
     {
       id: "1pn",
-      title: "Căn hộ Studio",
+      title: t.studio,
       area: "50m²",
       image: "/web_image/5_matBangCacCan/1PN.jpg",
       features: [
-        "Diện tích: 50m²",
-        "1 phòng ngủ, 1 phòng tắm",
-        "Ban công riêng",
-        "Bếp mở hiện đại",
-        "Không gian linh hoạt",
-        "Phù hợp cho cặp đôi, người độc thân"
+        `${t.areaLabel}: 50m²`,
+        t.studioFeature1,
+        t.studioFeature2,
+        t.studioFeature3,
+        t.studioFeature4,
+        t.suitableForCouple
       ]
     },
     {
       id: "2pn",
-      title: "Căn hộ 2 Phòng ngủ",
+      title: t.twoBedroom,
       area: "71m² - 88m²",
       image: "/web_image/5_matBangCacCan/2PN_phongKhach_bep.jpg",
       features: [
-        "Diện tích: 71m² - 88m²",
-        "2 phòng ngủ, 2 phòng tắm",
-        "Phòng khách rộng rãi",
-        "Ban công panorama",
-        "Bếp riêng biệt",
-        "Phù hợp cho gia đình trẻ"
+        `${t.areaLabel}: 71m² - 88m²`,
+        t.twoBedroomFeature1,
+        t.twoBedroomFeature2,
+        t.twoBedroomFeature3,
+        t.twoBedroomFeature4,
+        t.suitableForFamily
       ]
     },
     {
       id: "3pn",
-      title: "Căn hộ 3 Phòng ngủ",
+      title: t.threeBedroom,
       area: "98m²",
       image: "/web_image/5_matBangCacCan/3PN.jpg",
       features: [
-        "Diện tích: 98m²",
-        "3 phòng ngủ, 2 phòng tắm",
-        "Ban công rộng",
-        "Phù hợp cho gia đình nhiều thế hệ"
+        `${t.areaLabel}: 98m²`,
+        t.threeBedroomFeature1,
+        t.threeBedroomFeature2,
+        t.suitableForMultiGen
       ]
     }
   ];
@@ -61,10 +61,8 @@ const FloorPlansSection = () => {
     <section id="floor-plans" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Mặt Bằng Căn Hộ</h2>
-          <p>
-            Đa dạng các loại hình căn hộ với thiết kế tối ưu không gian sống
-          </p>
+          <h2>{t.floorPlansTitle}</h2>
+          <p>{t.floorPlansDesc}</p>
         </div>
 
         <div className="mb-8">
@@ -87,14 +85,13 @@ const FloorPlansSection = () => {
                   <div className="rounded-lg overflow-hidden shadow-lg">
                     <img 
                       src={plan.image}
-                      alt={`Mặt bằng ${plan.title}`}
+                      alt={`${t.floorPlansTitle} ${plan.title}`}
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-prive mb-2">{plan.title}</h3>
                     <p className="text-lg font-semibold mb-4">{plan.area}</p>
-                    
                     <ul className="space-y-3 mb-6">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-start">
@@ -103,20 +100,19 @@ const FloorPlansSection = () => {
                         </li>
                       ))}
                     </ul>
-                    
                     <div className="flex flex-wrap gap-4">
                       <Button 
                         onClick={openZalo} 
                         className="bg-prive hover:bg-prive-dark"
                       >
-                        Nhận thông tin chi tiết
+                        {t.getDetails}
                       </Button>
                       <Button 
                         variant="outline" 
                         onClick={openZalo}
                         className="border-prive text-prive hover:bg-prive hover:text-white"
                       >
-                        Đặt lịch tư vấn
+                        {t.bookConsult}
                       </Button>
                     </div>
                   </div>
@@ -132,7 +128,7 @@ const FloorPlansSection = () => {
             rel="noopener noreferrer"
             className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
           >
-            Xem hình thiết kế và mặt bằng tầng
+            {t.viewDesigns}
           </a>
         </div>
       </div>

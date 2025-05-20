@@ -1,46 +1,50 @@
 import React from 'react';
 import ImageGallery from '../ImageGallery';
 
-const AmenitiesSection = () => {
+interface SectionProps {
+  t: typeof import('@/lib/translations').default['vi'];
+}
+
+const AmenitiesSection: React.FC<SectionProps> = ({ t }) => {
   const amenities = [
     {
-      category: "Thư Giãn & Sức Khỏe",
+      category: t.relaxHealth,
       items: [
-        "3 hồ bơi điện phân muối liên hoàn 3000m2",
-        "Phòng tập Gym hiện đại",
-        "Sân tenis, bóng rổ, pickle ball",
-        "Cinema & Karaoke, bóng bàn, bida",
-        "Công viên ven sông",
-        "Vườn hoa, đường dạo bộ",
+        t.pool,
+        t.gym,
+        t.tennisBasketball,
+        t.cinemaKaraoke,
+        t.park,
+        t.flowerGarden,
       ]
     },
     {
-      category: "Giải Trí & Cộng Đồng",
+      category: t.entertainmentCommunity,
       items: [
-        "5 phòng tiệc đa năng",
-        "Khu BBQ ngoài trời",
-        "Khu vui chơi trẻ em",
-        "Thư viện & phòng đọc sách",
-        "Phòng chơi golf 3D",
+        t.multiPurposeRoom,
+        t.outdoorBBQ,
+        t.kidsPlayground,
+        t.library,
+        t.golfRoom,
       ]
     },
     {
-      category: "An Ninh & Tiện Nghi",
+      category: t.securityConvenience,
       items: [
-        "Bảo vệ 24/7",
-        "Hệ thống camera an ninh",
-        "Thẻ từ an ninh",
-        "Bãi đậu xe thông minh",
+        t.security24_7,
+        t.securityCameras,
+        t.securityCard,
+        t.smartParking,
       ]
     },
     {
-      category: "Mua Sắm & Dịch Vụ",
+      category: t.shoppingServices,
       items: [
-        "Siêu thị mini",
-        "Nhà hàng",
-        "Quán Cafe view sông",
-        "Tiệm thuốc tây Pharmacity",
-        "Trạm sạc xe điện",
+        t.miniSupermarket,
+        t.restaurant,
+        t.riversideCafe,
+        t.pharmacy,
+        t.electricCarCharging,
       ]
     }
   ];
@@ -76,10 +80,8 @@ const AmenitiesSection = () => {
     <section id="amenities" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Tiện Ích Đẳng Cấp</h2>
-          <p>
-            Với hơn 50 tiện ích, The Privé mang đến hệ thống tiện ích cao cấp, đáp ứng mọi nhu cầu của cuộc sống hiện đại
-          </p>
+          <h2>{t.amenities}</h2>
+          <p>{t.amenitiesDesc}</p>
         </div>
 
         <div className="mb-16">
@@ -112,9 +114,7 @@ const AmenitiesSection = () => {
 
         <div className="mt-12 prose max-w-3xl mx-auto text-center">
           <p className="text-lg text-gray-600">
-            Tại The Privé, mỗi chi tiết đều được chăm chút tỉ mỉ để tạo nên không gian sống hoàn hảo. 
-            Từ khu vực công cộng đến các tiện ích riêng tư, tất cả đều được thiết kế để nâng cao trải nghiệm sống của cư dân. 
-            Đây không chỉ là nơi để ở, mà còn là không gian để tận hưởng cuộc sống, kết nối cộng đồng và tạo nên những kỷ niệm đáng nhớ.
+            {t.detailedDescription}
           </p>
         </div>
       </div>

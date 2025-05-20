@@ -1,40 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageSquare } from 'lucide-react';
+import { Phone, MessageSquare, ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import translations from '@/lib/translations';
+import { Select, SelectTrigger, SelectContent, SelectItem } from '@/components/ui/select';
 
-const Header = () => {
+interface HeaderProps {
+  lang: 'vi' | 'en';
+  setLang: (lang: 'vi' | 'en') => void;
+  t: typeof translations['vi'];
+}
+
+const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const navigationItems = [{
-    label: 'Tổng Quan',
-    href: '#overview'
-  }, {
-    label: 'Vị Trí',
-    href: '#location'
-  }, {
-    label: 'Tiện Ích',
-    href: '#amenities'
-  }, {
-    label: 'Mặt Bằng',
-    href: '#floor-plans'
-  }, {
-    label: 'Bảng Giá',
-    href: '#pricing'
-  }, {
-    label: 'Chính Sách',
-    href: '#policy'
-  }, {
-    label: 'Hình Ảnh',
-    href: '#project-images'
-  }, {
-    label: 'Nhà Mẫu',
-    href: '#sample-room'
-  }, {
-    label: 'Liên Hệ',
-    href: '#contact'
-  }];
+  const navigationItems = [
+    { label: t.overview, href: '#overview' },
+    { label: t.location, href: '#location' },
+    { label: t.amenities, href: '#amenities' },
+    { label: t.floorPlans, href: '#floor-plans' },
+    { label: t.pricing, href: '#pricing' },
+    { label: t.policy, href: '#policy' },
+    { label: t.projectImages, href: '#project-images' },
+    { label: t.sampleRoom, href: '#sample-room' },
+    { label: t.contact, href: '#contact' },
+  ];
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -72,7 +63,8 @@ const Header = () => {
     }
   };
 
-  return <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-md py-2' : 'bg-gray-900/90 backdrop-blur py-4'}`}>
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-md py-2' : 'bg-gray-900/90 backdrop-blur py-4'}`}>
       <div className="container flex items-center justify-between px-4">
         <div className="flex items-center">
           <a href="#hero" className="text-2xl font-bold text-white">THE PRIVÉ</a>
@@ -89,15 +81,27 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons + Language Switcher */}
         <div className="hidden lg:flex items-center space-x-4">
           <Button variant="outline" className="border-prive text-prive hover:bg-prive hover:text-white" onClick={handleOpenZalo}>
             <MessageSquare className="mr-2 h-4 w-4" />
-            Tư Vấn Zalo
+            {t.consult}
           </Button>
           <Button variant="default" className="bg-prive hover:bg-prive-dark" onClick={handleOpenZalo}>
-            Booking
+            {t.booking}
           </Button>
+          <div className="ml-4 flex items-center">
+            <Select value={lang} onValueChange={setLang}>
+              <SelectTrigger className="min-w-[120px] flex items-center justify-between px-3 py-2 border border-input rounded-md bg-background text-sm text-black">
+                <span className="whitespace-nowrap overflow-hidden text-ellipsis text-black">Language</span>
+                <ChevronDown className="ml-2 h-4 w-4 text-black" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="vi">Vietnamese</SelectItem>
+                <SelectItem value="en">English</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -116,11 +120,20 @@ const Header = () => {
       <div
         id="mobile-menu-container"
         onClick={handleMenuBackgroundClick}
-        className={`fixed inset-0 z-40 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } lg:hidden pt-20 overflow-y-auto`}
+        className={`fixed inset-0 z-40 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out lg:hidden pt-0 overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ pointerEvents: isMobileMenuOpen ? 'auto' : 'none', visibility: isMobileMenuOpen ? 'visible' : 'hidden', height: '100vh' }}
+        aria-hidden={!isMobileMenuOpen}
       >
-        <nav className="container px-4">
+        <header className="sticky top-0 left-0 right-0 z-50 bg-gray-900 flex items-center justify-between px-4 py-4 border-b border-gray-800">
+          <a href="#hero" className="text-2xl font-bold text-white">THE PRIVÉ</a>
+          <Button variant="ghost" onClick={toggleMobileMenu} aria-label="Close menu" className="p-2 text-white">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="18" y1="6" x2="6" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              <line x1="6" y1="6" x2="18" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </Button>
+        </header>
+        <nav className="container px-4 pt-4">
           {/* Updated navigation item click to prevent menu closure */}
           <ul className="space-y-6 text-center">
             {navigationItems.map((item) => (
@@ -143,19 +156,32 @@ const Header = () => {
                 className="w-full border-prive text-prive hover:bg-prive hover:text-white"
                 onClick={handleOpenZalo}
               >
-                <MessageSquare className="mr-2 h-4 w-4" /> Tư Vấn
+                <MessageSquare className="mr-2 h-4 w-4" /> {t.consult}
               </Button>
               <Button
                 variant="default"
                 className="w-full bg-prive hover:bg-prive-dark"
                 onClick={handleOpenZalo}
               >
-                Booking
+                {t.booking}
               </Button>
+              <div className="flex justify-center pt-2">
+                <Select value={lang} onValueChange={setLang}>
+                  <SelectTrigger className="min-w-[120px] flex items-center justify-between px-3 py-2 border border-input rounded-md bg-background text-sm text-black">
+                    <span className="whitespace-nowrap overflow-hidden text-ellipsis text-black">Language</span>
+                    <ChevronDown className="ml-2 h-4 w-4 text-black" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="vi">Vietnamese</SelectItem>
+                    <SelectItem value="en">English</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </li>
           </ul>
         </nav>
       </div>
-    </header>;
+    </header>
+  );
 };
 export default Header;

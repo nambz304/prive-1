@@ -11,7 +11,7 @@ const GOOGLE_FORM_ENTRIES = {
   message: "entry.252073521" // Replace with the entry ID for the message field
 };
 
-const ContactForm = () => {
+const ContactForm = ({ t }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -32,8 +32,8 @@ const ContactForm = () => {
     const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
     if (!phoneRegex.test(formData.phone)) {
       toast({
-        title: "Lỗi",
-        description: "Vui lòng nhập số điện thoại hợp lệ",
+        title: t.errorTitle,
+        description: t.errorPhone,
         variant: "destructive"
       });
       return;
@@ -81,8 +81,8 @@ const ContactForm = () => {
     // Submit the form
     form.submit();
     toast({
-      title: "Gửi thành công!",
-      description: "Nhân viên tư vấn bên em sẽ liên hệ với Anh/Chị trong vòng chậm nhất 30 phút",
+      title: t.successTitle,
+      description: t.contactSuccess,
     });
 
     setFormData({
@@ -100,7 +100,7 @@ const ContactForm = () => {
         <Input
           type="text"
           name="name"
-          placeholder="Tên"
+          placeholder={t.namePlaceholder}
           value={formData.name}
           onChange={handleChange}
           className="w-full text-black"
@@ -112,7 +112,7 @@ const ContactForm = () => {
         <Input
           type="tel"
           name="phone"
-          placeholder="Số điện thoại"
+          placeholder={t.phonePlaceholder}
           value={formData.phone}
           onChange={handleChange}
           className="w-full text-black"
@@ -123,7 +123,7 @@ const ContactForm = () => {
       <div>
         <Textarea
           name="message"
-          placeholder="ANH/CHỊ QUAN TÂM CĂN 2PN HAY 3PN ĐỂ LẠI THÔNG TIN EM GỬI BÁO GIÁ"
+          placeholder={t.messagePlaceholder}
           value={formData.message}
           onChange={handleChange}
           className="w-full min-h-[100px] text-black"
@@ -135,7 +135,7 @@ const ContactForm = () => {
         className="w-full bg-prive hover:bg-prive-dark"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Đang gửi...' : 'Gửi thông tin'}
+        {isSubmitting ? t.sending : t.submit}
       </Button>
     </form>
   );

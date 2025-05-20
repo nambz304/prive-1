@@ -3,37 +3,41 @@ import { Button } from '@/components/ui/button';
 import ImageGallery from '@/components/ImageGallery';
 import ProjectImagesSection from './ProjectImagesSection';
 
-const PricingSection = () => {
+interface SectionProps {
+  t: typeof import('@/lib/translations').default['vi'];
+}
+
+const PricingSection: React.FC<SectionProps> = ({ t }) => {
   const pricingData = [
     {
-      type: "Studio",
+      type: t.studioType,
       area: "50m²",
-      priceRange: "450 - 500 triệu",
-      pricePerM2: "48 - 51 triệu/m²",
+      priceRange: t.priceRangeStudio,
+      areaM2: t.areaM2Studio,
     },
     {
-      type: "2PN 2WC",
+      type: t.twoBedroomType,
       area: "71m² - 88m²",
-      priceRange: "650 - 850 triệu",
-      pricePerM2: "50 - 53 triệu/m²",
+      priceRange: t.priceRange2PN,
+      areaM2: t.areaM22PN,
     },
     {
-      type: "3PN 2WC",
+      type: t.threeBedroomType,
       area: "98m²",
-      priceRange: "900 triệu - 1 tỷ",
-      pricePerM2: "50 - 53 triệu/m²",
+      priceRange: t.priceRange3PN,
+      areaM2: t.areaM23PN,
     },
     {
-      type: "Duplex Villa",
+      type: t.duplexVillaType,
       area: "130m² - 200m²",
-      priceRange: "Đang cập nhật",
-      pricePerM2: "53 - 55 triệu/m²",
+      priceRange: t.priceRangeDuplex,
+      areaM2: t.areaM2Duplex,
     },
     {
-      type: "Penthouse",
+      type: t.penthouseType,
       area: "105m² - 145m²",
-      priceRange: "Đang cập nhật",
-      pricePerM2: "55 - 60 triệu/m²",
+      priceRange: t.priceRangePenthouse,
+      areaM2: t.areaM2Penthouse,
     }
   ];
 
@@ -60,20 +64,18 @@ const PricingSection = () => {
     <section id="pricing" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Bảng Giá</h2>
-          <p>
-            Thông tin giá bán và các loại hình căn hộ của dự án The Privé
-          </p>
+          <h2>{t.pricing}</h2>
+          <p>{t.pricingDesc}</p>
         </div>
 
         <div className="overflow-x-auto mb-12">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-prive">
-                <th className="border border-gray-600 p-3 text-left">Loại căn hộ</th>
-                <th className="border border-gray-600 p-3 text-left">Diện tích</th>
-                <th className="border border-gray-600 p-3 text-left">Thanh toán đợt 1</th>
-                <th className="border border-gray-600 p-3 text-left">Liên hệ</th>
+                <th className="border border-gray-600 p-3 text-left">{t.apartmentType}</th>
+                <th className="border border-gray-600 p-3 text-left">{t.areaLabel}</th>
+                <th className="border border-gray-600 p-3 text-left">{t.firstPayment}</th>
+                <th className="border border-gray-600 p-3 text-left">{t.contact}</th>
               </tr>
             </thead>
             <tbody>
@@ -89,7 +91,7 @@ const PricingSection = () => {
                       size="sm"
                       className="bg-prive hover:bg-prive-dark w-full"
                     >
-                      Báo giá
+                      {t.getQuote}
                     </Button>
                   </td>
                 </tr>
@@ -105,9 +107,11 @@ const PricingSection = () => {
             rel="noopener noreferrer"
             className="inline-block bg-prive text-white py-3 px-6 rounded-lg shadow-md hover:bg-prive-dark transition-colors"
           >
-            Tải banggia.pdf
+            {t.downloadPriceList}
           </a>
         </div>
+
+        <ProjectImagesSection images={projectImages.map(img => ({...img, alt: t[img.alt] || img.alt}))} onContact={openZalo} t={t} />
 
       </div>
     </section>

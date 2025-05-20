@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Progress } from '@/components/ui/progress';
 
-const ProgressSection = () => {
+const ProgressSection = ({ t }) => {
   const constructionProgress = [
     { 
       stage: "Thiết kế & Quy hoạch",
@@ -83,21 +82,19 @@ const ProgressSection = () => {
     <section id="progress" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="section-title">
-          <h2>Tiến Độ Dự Án</h2>
-          <p>
-            Theo dõi tiến độ xây dựng mới nhất của dự án Privé
-          </p>
+          <h2>{t.progressTitle}</h2>
+          <p>{t.progressDesc}</p>
         </div>
 
         <div className="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
           <div className="flex justify-between mb-8">
             <div>
-              <h3 className="text-xl font-semibold text-prive">Tổng Tiến Độ Dự Án</h3>
-              <p className="text-gray-600">Cập nhật: Tháng 5/2024</p>
+              <h3 className="text-xl font-semibold text-prive">{t.totalProgress}</h3>
+              <p className="text-gray-600">{t.updated}: Tháng 5/2024</p>
             </div>
             <div className="text-right">
               <span className="text-2xl font-bold text-prive">51%</span>
-              <p className="text-gray-600">Hoàn thành</p>
+              <p className="text-gray-600">{t.completed}</p>
             </div>
           </div>
           
@@ -129,14 +126,14 @@ const ProgressSection = () => {
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img 
               src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-              alt="Công trường dự án" 
+              alt={t.constructionAlt} 
               className="w-full h-64 object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img 
               src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-              alt="Phối cảnh dự án" 
+              alt={t.renderAlt} 
               className="w-full h-64 object-cover"
             />
           </div>

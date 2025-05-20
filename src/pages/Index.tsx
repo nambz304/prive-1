@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
@@ -12,6 +11,7 @@ import SampleRoomSection from '@/components/sections/SampleRoomSection';
 import PricingSection from '@/components/sections/PricingSection';
 import PolicySection from '@/components/sections/PolicySection';
 import ContactSection from '@/components/sections/ContactSection';
+import translations from '@/lib/translations';
 
 // Helper function to handle animation on scroll
 const handleScrollAnimation = () => {
@@ -67,24 +67,36 @@ const Index = () => {
     };
   }, []);
 
+  const [lang, setLang] = useState<'vi' | 'en'>('vi');
+  const t = translations[lang] as any;
+
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header lang={lang} setLang={setLang} t={t} />
       <main className="flex-grow">
-        <HeroSection />
-        <OverviewSection />
-        <LocationSection />
-        <AmenitiesSection />
-        <FloorPlansSection />
-        <PricingSection />
-        <PolicySection />
-        <SampleRoomSection />
-        <ContactSection />
+        <HeroSection t={t} />
+        <OverviewSection t={t} />
+        <LocationSection t={t} />
+        <AmenitiesSection t={t} />
+        <FloorPlansSection t={t} />
+        <PricingSection t={t} />
+        <PolicySection t={t} />
+        <SampleRoomSection t={t} />
+        <ContactSection t={t} />
       </main>
-      <FloatingButtons />
-      <Footer />
+      <FloatingButtons t={t} />
+      <Footer t={t} />
     </div>
   );
 };
 
 export default Index;
+
+// In your main page or App, ensure you pass t={t} to all these components:
+// <FloorPlansSection t={t} />
+// <SampleRoomSection t={t} />
+// <ProjectImagesSection t={t} />
+// <ProgressSection t={t} />
+// <ContactForm t={t} />
+// <ViewingForm t={t} />
+// <FloatingButtons t={t} />

@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import ContactForm from './ContactForm';
 import ViewingForm from './ViewingForm';
 
-const FloatingButtons = () => {
+const FloatingButtons = ({ t }) => {
   const isMobile = useIsMobile();
 
   // Updated the handleCall function to ensure it works on tablets
@@ -30,41 +30,53 @@ const FloatingButtons = () => {
         onClick={handleCall}
         className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white hover:bg-green-600 transition-transform shadow-lg animate-bounce"
         style={{ animation: 'pulse 1.5s infinite' }}
+        title={t.call}
       >
         <Phone size={20} />
       </button>
 
       <Dialog>
         <DialogTrigger asChild>
-          <button className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg">
+          <button 
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
+            title={t.contactTitle}
+          >
             <ClipboardList size={20} />
           </button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-center">Đăng Ký Tư Vấn & Báo Giá</DialogTitle>
+            <DialogTitle className="text-center">
+              {t.contactTitle}
+            </DialogTitle>
           </DialogHeader>
-          <ContactForm />
+          <ContactForm t={t} />
         </DialogContent>
       </Dialog>
 
       <Dialog>
         <DialogTrigger asChild>
-          <button className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg">
+          <button 
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
+            title={t.viewingTitle}
+          >
             <Home size={20} />
           </button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-center">Đăng Ký Xem Nhà Mẫu</DialogTitle>
+            <DialogTitle className="text-center">
+              {t.viewingTitle}
+            </DialogTitle>
           </DialogHeader>
-          <ViewingForm />
+          <ViewingForm t={t} />
         </DialogContent>
       </Dialog>
 
       <button 
         onClick={handleZalo}
         className="flex items-center justify-center w-12 h-12 rounded-full bg-prive text-white hover:bg-prive-dark transition-colors shadow-lg"
+        title={t.zalo}
       >
         <MessageSquare size={20} />
       </button>
