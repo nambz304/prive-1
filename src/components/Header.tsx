@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block">
+        <nav className="hidden lg:block flex-1">
           <ul className="flex space-x-8">
             {navigationItems.map(item => <li key={item.label}>
                 <a href={item.href} className="font-medium text-gray-200 hover:text-prive transition-colors">
@@ -104,8 +104,21 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
           </div>
         </div>
 
+        {/* Language Switcher for mobile */}
+        <div className="flex lg:hidden items-center">
+          <Select value={lang} onValueChange={setLang}>
+            <SelectTrigger className="h-7 min-h-0 flex items-center justify-between px-1 py-0.5 border border-input rounded bg-background text-xs text-black w-auto">
+              <span className="whitespace-nowrap overflow-hidden text-ellipsis text-black">Language</span>
+              <ChevronDown className="ml-0 h-4 w-4 text-black" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="vi">Vietnamese</SelectItem>
+              <SelectItem value="en">English</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden">
+        <div className="lg:hidden -ml-2">
           <Button variant="ghost" onClick={toggleMobileMenu} aria-label="Toggle menu" className="p-2 text-white">
             <div className="w-6 flex flex-col gap-1.5">
               <span className={`block h-0.5 w-full bg-white transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
@@ -165,18 +178,6 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
               >
                 {t.booking}
               </Button>
-              <div className="flex justify-center pt-2">
-                <Select value={lang} onValueChange={setLang}>
-                  <SelectTrigger className="min-w-[120px] flex items-center justify-between px-3 py-2 border border-input rounded-md bg-background text-sm text-black">
-                    <span className="whitespace-nowrap overflow-hidden text-ellipsis text-black">Language</span>
-                    <ChevronDown className="ml-2 h-4 w-4 text-black" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="vi">Vietnamese</SelectItem>
-                    <SelectItem value="en">English</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
             </li>
           </ul>
         </nav>
